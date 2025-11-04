@@ -1,8 +1,9 @@
-/* ==========================
-   App.css - Modernized Portfolio (Retaining current working layout)
-   ========================== */
+/* =====================================================
+   App.css — Modernized Portfolio (Refactored)
+   Author: Dr. Abhisakh Sarma
+   ===================================================== */
 
-/* ---------- Variables ---------- */
+/* ---------- Root Variables ---------- */
 :root {
   --bg-color: #0f0f14;
   --text-color: #f0f0f5;
@@ -10,6 +11,7 @@
   --accent-hover: #ff00ff;
   --card-bg: #1a1a2e;
   --card-shadow: rgba(0, 255, 247, 0.15);
+  --card-shadow-hover: rgba(0, 255, 247, 0.25);
   --navbar-height: 80px;
   --max-content-width: 1200px;
   --section-padding: 4rem;
@@ -17,17 +19,19 @@
   --transition-speed: 0.3s;
 }
 
-/* ---------- Global Styles ---------- */
+/* =====================================================
+   GLOBAL STYLES
+   ===================================================== */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
-  padding-top: var(--navbar-height);
   line-height: 1.6;
+  padding-top: var(--navbar-height);
   scroll-behavior: smooth;
-  transition: padding-top 0.3s ease;
+  transition: padding-top var(--transition-speed) ease;
 }
 
 a {
@@ -35,12 +39,10 @@ a {
   text-decoration: none;
   transition: color var(--transition-speed);
 }
-
 a:hover {
   color: var(--accent-hover);
 }
 
-/* ---------- Root Container ---------- */
 #root {
   max-width: var(--max-content-width);
   margin: 0 auto;
@@ -50,7 +52,9 @@ a:hover {
   align-items: center;
 }
 
-/* ---------- Navbar ---------- */
+/* =====================================================
+   NAVBAR
+   ===================================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -73,7 +77,6 @@ a:hover {
   cursor: pointer;
   transition: transform var(--transition-speed), filter var(--transition-speed);
 }
-
 .navbar .logo:hover {
   transform: scale(1.05) rotate(5deg);
   filter: drop-shadow(0 0 0.8rem var(--accent-color));
@@ -84,7 +87,6 @@ a:hover {
   gap: 2rem;
   list-style: none;
 }
-
 .navbar .nav-links li a {
   display: flex;
   align-items: center;
@@ -94,23 +96,48 @@ a:hover {
   color: var(--accent-color);
   padding: 0.25rem 0.5rem;
   border-radius: var(--border-radius);
-  transition: color var(--transition-speed), background var(--transition-speed);
+  position: relative;
+  transition: all var(--transition-speed);
 }
 
+.navbar .nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+.navbar .nav-links li a:hover::after {
+  width: 100%;
+}
 .navbar .nav-links li a:hover,
 .nav-link.active-link {
   color: var(--accent-hover);
-  background-color: rgba(0, 255, 247, 0.1);
-  text-shadow: 0 0 0.8rem var(--accent-hover);
+  background-color: rgba(0, 255, 247, 0.15);
+  text-shadow: 0 0 1rem var(--accent-hover);
+  transform: translateY(-2px);
+}
+.navbar .nav-links li a .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
 }
 
-/* ---------- Hero Section ---------- */
+/* =====================================================
+   HERO SECTION (Home Page)
+   ===================================================== */
 .hero {
   margin: var(--section-padding) 0 2rem;
   padding: 0 1rem;
   max-width: 900px;
   display: flex;
   justify-content: center;
+  transition: all var(--transition-speed);
 }
 
 .hero-content {
@@ -118,13 +145,20 @@ a:hover {
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  background: linear-gradient(145deg, #11101b, #1a1a2e);
+  box-shadow: 0 0 2rem var(--card-shadow);
+  transition: all var(--transition-speed) ease-in-out;
+}
+.hero-content:hover {
+  box-shadow: 0 0 2.5rem var(--card-shadow-hover);
 }
 
 .hero-text {
   flex: 1;
   text-align: left;
 }
-
 .hero-text h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -132,17 +166,30 @@ a:hover {
   text-shadow: 0 0 1rem rgba(0, 255, 247, 0.4);
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-  animation-delay: 0.2s;
+  animation: fadeInUp 1s forwards 0.2s;
 }
-
 .hero-text p {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   color: #bbb;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-  animation-delay: 0.6s;
+  animation: fadeInUp 1s forwards 0.6s;
+}
+
+.hero-button {
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+  color: var(--bg-color);
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
+  transition: all 0.3s ease;
+}
+.hero-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 1.5rem var(--accent-hover);
 }
 
 .hero-image {
@@ -153,16 +200,24 @@ a:hover {
   overflow: hidden;
   border: 3px solid var(--accent-color);
   box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
-  transition: all var(--transition-speed);
+  transition: all 0.3s ease, box-shadow 0.4s ease-in-out;
+  background: radial-gradient(circle at top left, rgba(0, 255, 247, 0.2), transparent);
 }
-
 .hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.hero-image:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 1.5rem rgba(0, 255, 247, 0.7),
+              0 0 0.5rem rgba(255, 0, 255, 0.3);
 }
 
-/* ---------- Cards / Sections ---------- */
+/* =====================================================
+   CARDS (Generic Sections)
+   ===================================================== */
 .card {
   background-color: var(--card-bg);
   padding: 2rem;
@@ -173,26 +228,39 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  transition: all var(--transition-speed) ease-in-out;
 }
-
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 2rem var(--accent-color);
+  box-shadow: 0 0 2rem var(--card-shadow-hover);
 }
-
 .card h2 {
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 600;
   color: var(--accent-color);
 }
-
 .card p {
   font-size: clamp(0.9rem, 2vw, 1rem);
   color: #ccc;
 }
+.card button {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.card button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 1rem var(--accent-hover);
+}
 
-/* ---------- Profile Image for non-Home pages ---------- */
+/* =====================================================
+   PROFILE IMAGE (Other Pages)
+   ===================================================== */
 .profile-image-top-left {
   position: fixed;
   top: calc(var(--navbar-height) + 1rem);
@@ -204,15 +272,103 @@ a:hover {
   border: 3px solid var(--accent-color);
   box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
   z-index: 101;
+  transition: all 0.3s ease;
 }
-
 .profile-image-top-left img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.profile-image-top-left:hover img {
+  transform: scale(1.05);
 }
 
-/* ---------- Animations ---------- */
+/* =====================================================
+   CONTACT SECTION
+   ===================================================== */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--section-padding) 1rem;
+  width: 100%;
+  max-width: var(--max-content-width);
+  gap: 2rem;
+}
+.contact-section h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--accent-color);
+}
+.contact-section p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #ccc;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+.contact-form input,
+.contact-form textarea {
+  background-color: #222;
+  border: 1px solid rgba(0, 255, 247, 0.3);
+  color: var(--text-color);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 255, 247, 0.5);
+  outline: none;
+}
+
+.contact-submit {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contact-submit:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 1rem var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Contact links (GitHub, LinkedIn, ORCID) */
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact-links a {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+  color: var(--bg-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.contact-links a:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 1.5rem var(--accent-hover);
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -220,14 +376,15 @@ a:hover {
   }
 }
 
-/* ---------- Responsive ---------- */
+/* =====================================================
+   RESPONSIVE STYLES
+   ===================================================== */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     height: auto;
     padding: 0.5rem 1rem;
   }
-
   .navbar .nav-links {
     flex-direction: column;
     gap: 1rem;
@@ -241,30 +398,24 @@ a:hover {
     margin-top: 0;
     padding: 1rem;
   }
-
   .hero-content {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-
   .hero-text {
     text-align: center;
   }
-
   .hero-text h1 {
     font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
-
   .hero-text p {
     font-size: clamp(0.9rem, 4vw, 1rem);
   }
-
   .hero-image {
     width: clamp(80px, 20vw, 120px);
     height: clamp(80px, 20vw, 120px);
     order: -1;
-    margin-bottom: 0.5rem;
   }
 
   .profile-image-top-left {
@@ -274,16 +425,19 @@ a:hover {
     height: 80px;
   }
 
-  .card h2 {
-    font-size: clamp(1.3rem, 5vw, 1.5rem);
+  .contact-section {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
   }
-
-  .card p {
-    font-size: clamp(0.85rem, 3vw, 0.9rem);
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
   }
 }
 
-/* ---------- Content Wrapper ---------- */
+/* =====================================================
+   CONTENT WRAPPER
+   ===================================================== */
 .content-wrapper {
   margin-top: var(--navbar-height);
   display: flex;
