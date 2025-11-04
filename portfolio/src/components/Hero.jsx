@@ -1,17 +1,17 @@
+// Hero.jsx
 import React from 'react';
-import '../App.css';
-import profilePic from '../assets/profile.jpg'; // import profile image
+import '../App.css'; // or use App.css if styles are there
 
-const Hero = ({ name, role, description }) => {
+const Hero = ({ name, description, image }) => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <div className="hero-text">
-          <h1>Hi, I’m {name}</h1>
-          <p>{description}</p>
-        </div>
         <div className="hero-image">
-          <img src={profilePic} alt={name} />
+          {image && <img src={image} alt={name} />}
+        </div>
+        <div className="hero-text">
+          <h1>{name}</h1>
+          <p>{description}</p>
         </div>
       </div>
     </section>

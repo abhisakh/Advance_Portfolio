@@ -13,14 +13,17 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/aiprojects" element={<AIProjects />} />
-        <Route path="/publications" element={<Publications />} />
-        <Route path="/instrumentation" element={<Instrumentation />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+            {/* Wrap all pages in this div */}
+      <div className="content-wrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/aiprojects" element={<AIProjects />} />
+          <Route path="/publications" element={<Publications />} />
+          <Route path="/instrumentation" element={<Instrumentation />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

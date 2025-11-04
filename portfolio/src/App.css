@@ -1,5 +1,5 @@
 /* ==========================
-   App.css - Professional Portfolio Theme
+   App.css - Modernized Portfolio (Retaining current working layout)
    ========================== */
 
 /* ---------- Variables ---------- */
@@ -24,9 +24,10 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
-  padding-top: var(--navbar-height); /* Default for desktop */
+  padding-top: var(--navbar-height);
   line-height: 1.6;
   scroll-behavior: smooth;
+  transition: padding-top 0.3s ease;
 }
 
 a {
@@ -85,6 +86,9 @@ a:hover {
 }
 
 .navbar .nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 500;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: var(--accent-color);
@@ -141,7 +145,6 @@ a:hover {
   animation-delay: 0.6s;
 }
 
-/* Hero profile image (Home page only) */
 .hero-image {
   flex-shrink: 0;
   width: 150px;
@@ -150,6 +153,7 @@ a:hover {
   overflow: hidden;
   border: 3px solid var(--accent-color);
   box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
+  transition: all var(--transition-speed);
 }
 
 .hero-image img {
@@ -208,13 +212,6 @@ a:hover {
   object-fit: cover;
 }
 
-/* ---------- Main ---------- */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* ---------- Animations ---------- */
 @keyframes fadeInUp {
   to {
@@ -225,10 +222,9 @@ main {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  /* Navbar stacked */
   .navbar {
-    height: auto;
     flex-direction: column;
+    height: auto;
     padding: 0.5rem 1rem;
   }
 
@@ -237,9 +233,13 @@ main {
     gap: 1rem;
   }
 
-  /* Increase body padding to avoid overlapping stacked navbar */
   body {
-    padding-top: calc(var(--navbar-height) + 30rem); /* adjust if needed */
+    padding-top: calc(var(--navbar-height) + 15rem);
+  }
+
+  .hero {
+    margin-top: 0;
+    padding: 1rem;
   }
 
   .hero-content {
@@ -263,6 +263,15 @@ main {
   .hero-image {
     width: clamp(80px, 20vw, 120px);
     height: clamp(80px, 20vw, 120px);
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-image-top-left {
+    top: calc(var(--navbar-height) + 3rem);
+    left: 2.5rem;
+    width: 80px;
+    height: 80px;
   }
 
   .card h2 {
@@ -272,12 +281,15 @@ main {
   .card p {
     font-size: clamp(0.85rem, 3vw, 0.9rem);
   }
+}
 
-  .profile-image-top-left {
-    top: calc(var(--navbar-height) + 20rem);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-  }
+/* ---------- Content Wrapper ---------- */
+.content-wrapper {
+  margin-top: var(--navbar-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-content-width);
+  transition: margin-top 0.3s;
 }
