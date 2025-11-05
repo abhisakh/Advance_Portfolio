@@ -259,29 +259,49 @@ a:hover {
 }
 
 /* =====================================================
-   PROFILE IMAGE (Other Pages)
+   PROFILE IMAGE (Other Pages) — FIXED & POLISHED
    ===================================================== */
 .profile-image-top-left {
   position: fixed;
-  top: calc(var(--navbar-height) + 1rem);
+  top: calc(var(--navbar-height) + 1.2rem);
   left: 1.5rem;
   width: 120px;
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--accent-color);
+  background-color: #111; /* fallback to avoid flicker */
   box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
-  z-index: 101;
-  transition: all 0.3s ease;
+  z-index: 999; /* ensures visibility above navbar and text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .profile-image-top-left img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
+
+.profile-image-top-left:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 1.5rem rgba(0, 255, 247, 0.7);
+}
+
 .profile-image-top-left:hover img {
   transform: scale(1.05);
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .profile-image-top-left {
+    top: calc(var(--navbar-height) + 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    z-index: 999;
+  }
 }
 
 /* =====================================================
@@ -480,4 +500,119 @@ a:hover {
 .success-overlay p {
   font-size: 1.2rem;
   color: var(--text-color);
+}
+/*=========================================================================*/
+.timeline-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s;
+}
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================================
+   CAREER TIMELINE (Enhanced)
+   ===================================================== */
+.timeline {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.timeline h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 2.5rem;
+  border-left: 2px solid rgba(0, 255, 247, 0.2);
+}
+
+.timeline-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.1rem;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Add some spacing from the text block */
+.timeline-content {
+  margin-left: 1rem;
+}
+
+.timeline-content h4 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-institution {
+  font-weight: 500;
+  color: #bbb;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+}
+
+.timeline-details {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Subtle glowing animation for markers */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0.5rem rgba(0, 255, 247, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 1.2rem rgba(0, 255, 247, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive timeline */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 0.5rem;
+  }
+
+  .timeline-container {
+    margin-left: 0;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -0.9rem;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-content {
+    margin-left: 0.8rem;
+  }
 }
