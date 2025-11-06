@@ -1,3 +1,41 @@
+
+/* =====================================================
+   App.css — Final Master Import File
+   ===================================================== */
+
+/* --- 1. Imports --- */
+@import './styles/variables.css';
+@import './styles/globals.css';
+@import './styles/navbar.css';
+@import './styles/hero.css';
+@import './styles/cards.css';
+@import './styles/profile.css';
+@import './styles/contact.css';
+@import './styles/timeline.css';
+
+/* --- 2. Global Utilities & Wrappers (Kept here) --- */
+.content-wrapper {
+  margin-top: var(--navbar-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-content-width);
+  transition: margin-top 0.3s;
+}
+
+.headline {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+@not-valid {
 /*1. Global Variables & Base Styles (Keep in App.css)*/
 /* =====================================================
    App.css — Reorganized for Modular Refactoring
@@ -714,4 +752,4 @@ new @media (max-width: 768px) block.*/
   /* These were also listed within the main timeline block,
   but keeping this global section marked for completeness */
 }
-
+}

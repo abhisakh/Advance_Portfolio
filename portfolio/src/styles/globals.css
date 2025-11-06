@@ -1,0 +1,61 @@
+/* =====================================================
+   globals.css
+   (Extracted from App.css, Sections 1.2, 1.4, and Global Responsive Fix)
+   ===================================================== */
+
+/* --- Global Element Styles (body, a, #root) --- */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding-top: var(--navbar-height);
+  scroll-behavior: smooth;
+  transition: padding-top var(--transition-speed) ease;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+#root {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Global Animations (Keyframes) --- */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0.5rem rgba(0, 255, 247, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 1.2rem rgba(0, 255, 247, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+/* --- Global Responsive Body Fix (Content Hiding) --- */
+@media (max-width: 768px) {
+    body {
+        /* This is the crucial fix for when the navbar expands on mobile */
+        padding-top: calc(var(--navbar-height) + 15rem);
+    }
+}

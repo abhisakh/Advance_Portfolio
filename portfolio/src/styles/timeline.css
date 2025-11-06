@@ -1,0 +1,111 @@
+/* =====================================================
+   timeline.css
+   (Extracted from App.css, Section 7 & Responsive Timeline Rules)
+   ===================================================== */
+
+/* --- Timeline Animation States --- */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s;
+}
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Timeline Desktop Styles --- */
+.timeline {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.timeline h3 {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 2.5rem;
+  border-left: 2px solid rgba(0, 255, 247, 0.2);
+}
+
+.timeline-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1.1rem;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(0, 255, 247, 0.5);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.timeline-content {
+  margin-left: 1rem;
+}
+
+.timeline-content h4 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-institution {
+  font-weight: 500;
+  color: #bbb;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+}
+
+.timeline-details {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+.timeline-details ul,
+.timeline-details li {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #ccc;
+}
+
+/* --- Responsive Timeline Styles (Mobile) --- */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 0.5rem;
+  }
+
+  .timeline-container {
+    margin-left: 0;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -0.9rem;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-content {
+    margin-left: 0.8rem;
+  }
+}
