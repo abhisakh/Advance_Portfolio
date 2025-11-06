@@ -1,98 +1,276 @@
 /* =====================================================
-   navbar.css
-   (Extracted from App.css, Section 2 & Responsive Navbar Rules)
+   navbar.css (Adapted for New Component Structure)
    ===================================================== */
+:root {
+  --navbar-height: 16rem; /* Reduced height */
+}
 
-/* --- Desktop Navbar Styles --- */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 10px var(--card-shadow);
+  color: var(--text-color);
+  padding: 0 4rem;
   height: var(--navbar-height);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  background-color: #111;
-  border-bottom: 1px solid rgba(0, 255, 247, 0.2);
+  /* 1. Align logo and menu-content-row to the vertical top/bottom extremes */
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
   z-index: 100;
+  transition: all var(--transition-speed) ease;
 }
 
 .navbar .logo {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
   color: var(--accent-color);
-  cursor: pointer;
-  transition: transform var(--transition-speed), filter var(--transition-speed);
-}
-.navbar .logo:hover {
-  transform: scale(1.05) rotate(5deg);
-  filter: drop-shadow(0 0 0.8rem var(--accent-color));
+  text-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
+  /* 2. PUSHES subsequent content (menu-content-row) to the bottom */
+  margin-bottom: auto;
+  margin-top: 0.75rem;
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
-.navbar .nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+/* 🟢 DESKTOP CONTENT ROW (The main container for links and feature card) */
+.navbar .menu-content-row {
+    /* DESKTOP FLEX PROPERTIES */
+    display: flex;
+    /* Pushes the entire row to the bottom of the navbar */
+    align-self: flex-end;
+    /* Important: Force row direction to override potential mobile styles */
+    flex-direction: row;
+    margin-bottom: 0.75rem; /* Padding from the bottom edge */
+    flex-grow: 1; /* Allow the content row to take up remaining horizontal space */
+    justify-content: flex-end; /* Push content to the right edge */
+    min-width: 0; /* Allows the container to shrink gracefully */
 }
-.navbar .nav-links li a {
+
+/* 🟢 DESKTOP LINKS CONTAINER (ul.nav-links) */
+.navbar .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Reduced gap slightly for tighter packing */
+  gap: 1.5rem;
+
+  /* Horizontal row inside the content row */
+  display: flex;
+  /* Vertically align to the bottom of the row (Feature Card defines row height) */
+  align-items: flex-end;
+
+  flex-shrink: 1; /* Allowed to shrink if space is tight */
+  min-width: 0; /* Allows content shrinking */
+}
+
+.navbar .nav-links li {
+  padding: 0;
+  margin: 0;
+  /* CRITICAL FIX: Ensure list items don't shrink their content */
+  flex-shrink: 0;
+}
+
+/* 🟢 NAV LINK BASE STYLES */
+.navbar .nav-link {
+  white-space: nowrap;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 500;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  color: var(--accent-color);
-  padding: 0.25rem 0.5rem;
+
+  /* Adjust padding to accommodate the underline at the bottom */
+  padding: 0.4rem 0.6rem 0.6rem;
   border-radius: var(--border-radius);
+  transition: color var(--transition-speed);
+
+  /* CRITICAL for underline position */
   position: relative;
-  transition: all var(--transition-speed);
 }
 
-.navbar .nav-links li a::after {
+/* --- UNDERLINE PSEUDO-ELEMENT --- */
+.navbar .nav-link::after {
   content: '';
   position: absolute;
-  width: 0%;
+  width: 0; /* Starts hidden */
   height: 2px;
-  bottom: -4px;
-  left: 0;
+  bottom: 0;
+  left: 50%; /* Start position */
+  transform: translateX(-50%); /* Center the start position */
   background-color: var(--accent-color);
-  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--accent-color), 0 0 15px rgba(0, 255, 247, 0.5);
+  transition: width var(--transition-speed) ease-out;
 }
-.navbar .nav-links li a:hover::after {
+
+/* --- HOVER EFFECT --- */
+.navbar .nav-link:hover {
+  color: var(--accent-color); /* Text color change on hover */
+  background-color: transparent; /* Remove old background glow */
+}
+
+/* Expand the underline on hover */
+.navbar .nav-link:hover::after {
   width: 100%;
 }
-.navbar .nav-links li a:hover,
-.nav-link.active-link {
-  color: var(--accent-hover);
-  background-color: rgba(0, 255, 247, 0.15);
-  text-shadow: 0 0 1rem var(--accent-hover);
-  transform: translateY(-2px);
+
+.navbar .nav-link .icon {
+  width: 18px;
+  height: 18px;
 }
-.navbar .nav-links li a .icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1em;
-  height: 1em;
+
+/* --- ACTIVE LINK STYLING --- */
+.navbar .active-link {
+  color: var(--accent-color);
+  /* The active state still gets a subtle background glow for visual weight */
+  background-color: rgba(0, 255, 247, 0.05);
+  box-shadow: 0 0 5px rgba(0, 255, 247, 0.3);
+  /* Ensure active link has the same padding */
+  padding: 0.4rem 0.6rem 0.6rem;
 }
+
+/* Ensure the active link has a permanent underline */
+.navbar .active-link::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* Permanently visible */
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color), 0 0 15px rgba(0, 255, 247, 0.5);
+}
+
+/* HIDE THE MOBILE TOGGLE ON DESKTOP */
+.menu-toggle {
+    display: none;
+}
+
+/* Ensure the MobileFeature retains its size and alignment */
+.mobile-feature {
+    flex-shrink: 0; /* DO NOT SHRINK */
+    margin-left: 2rem; /* Spacing between links and feature card */
+    align-self: flex-end; /* Align to the bottom of the content row */
+    margin-bottom: 3rem;
+}
+
 
 /* --- Responsive Navbar Styles (Mobile) --- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    padding: 0.5rem 1rem;
     height: auto;
-    padding: 0.5rem 2rem;
-    align-items: flex-end;
+    /* Logo and Menu Toggle on one row */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; /* Allows menu-content-row to wrap underneath */
   }
+
   .navbar .logo {
-    align-self: flex-start;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0; /* Reset logo margin for mobile */
+    margin-top: 0;
   }
-  .navbar .nav-links {
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform var(--transition-speed);
+  }
+
+
+  /* 🔴 MOBILE CONTENT ROW (Collapsible) */
+  .navbar .menu-content-row {
+    /* 1. Hide by default */
+    display: none;
+
+    /* 2. Takes full width on the line below the logo/toggle */
+    width: 100%;
+
+    /* 3. Stacks vertically when visible */
     flex-direction: column;
-    gap: 1rem;
+    align-self: auto; /* Reset desktop alignment */
+    /* 🛠️ ALIGN TO LEFT/START */
+    align-items: flex-start;
+    margin-bottom: 0;
+    gap: 1.5rem; /* Gap between links and feature */
+    padding: 1rem 0;
+    padding-left: 1rem; /* Add padding on the left for the whole container */
+  }
+
+  /* State when menu is open */
+  .navbar .menu-content-row.open {
+    display: flex;
+  }
+
+
+  /* 🔴 MOBILE LINKS CONTAINER (ul.nav-links) */
+  .navbar .nav-links {
+    width: 30%; /* Take full width of parent row */
+    flex-direction: column;
+    /* 🛠️ ALIGN TO LEFT/START */
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Mobile link item padding */
+  .navbar .nav-links li {
+      width: 100%;
+      padding: 0;
+  }
+
+  /* 🟢 MOBILE NAV LINK WITH UNDERLINE RE-ENABLED */
+  .navbar .nav-link {
+    width: 90%; /* Links take up most of the mobile width */
+    /* 🛠️ ALIGN CONTENT TO LEFT/START */
+    justify-content: flex-start;
+    white-space: normal; /* Allow wrapping again on mobile if needed */
+
+    /* RE-ENABLE RELATIVE POSITION AND ADJUST PADDING FOR UNDERLINE SPACE */
+    padding: 0.4rem 0.6rem 0.6rem;
+    position: relative; /* Re-enable for ::after positioning */
+    background-color: rgba(0, 255, 247, 0.05); /* Restore background on hover/active for mobile */
+  }
+
+  /* 🔴 Mobile: Configure pseudo-element underline for left alignment */
+  .navbar .nav-link::after {
+    display: block; /* Override desktop removal */
+    width: 0; /* Still starts hidden on hover */
+    left: 0.6rem; /* Aligned with content start */
+    transform: none; /* Disable horizontal centering */
+  }
+
+  /* Mobile hover effect on underline */
+  .navbar .nav-link:hover::after {
+      width: calc(100% - 1.2rem); /* Span full link width minus side padding (0.6rem * 2) */
+  }
+
+  /* Ensure active link underline is permanently visible on mobile */
+  .navbar .active-link::after {
+    display: block; /* Override desktop removal */
+    width: calc(100% - 1.2rem); /* Permanently visible */
+    left: 0.6rem;
+    transform: none;
+  }
+
+  /* Mobile hover is a simple color and background change */
+  .navbar .nav-link:hover {
+      color: var(--accent-hover);
+      background-color: rgba(0, 255, 247, 0.1);
+  }
+
+  /* Mobile Feature inside the collapsing UL */
+  .mobile-feature {
+      width: 90%; /* Take up most of the mobile width */
+      max-width: 300px;
+      margin-left: 0;
+      align-self: center /* Aligned to LEFT/START */
   }
 }

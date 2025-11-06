@@ -1,9 +1,9 @@
-// src/pages/About.jsx
-import React, { useEffect } from "react"; // 👈 IMPORT useEffect
+import React, { useEffect } from "react";
 import profile from "../data/profileData";
 import CareerTimeline from "../components/CareerTimeline";
 import ProfileImage from "../components/ProfileImage";
 import CardSection from "../components/CardSection";
+import PageLayout from "../components/PageLayout"; // 👈 IMPORT PageLayout
 
 const About = () => {
 
@@ -51,92 +51,95 @@ const About = () => {
   // ----------------------------------------------------
 
   return (
-    <main className="content-wrapper">
-      {/* Top Profile Image */}
-      <ProfileImage size={120} />
+    <PageLayout pageTitle="About"> {/* 👈 WRAP ENTIRE CONTENT IN PageLayout */}
+      {/* 🟢 FIX: Added fixed-image-offset class here */}
+      <main className="fixed-image-offset">
+        {/* Top Profile Image */}
+        <ProfileImage size={120} />
 
-      {/* Intro Section */}
-      <CardSection title={`About ${profile.name}`}>
-        <p className="headline">{profile.headline}</p>
-        <p>{profile.summary}</p>
+        {/* Intro Section */}
+        <CardSection title={`About ${profile.name}`}>
+          <p className="headline">{profile.headline}</p>
+          <p>{profile.summary}</p>
 
-        <p>
-          <strong>Location:</strong> {profile.location} <br />
-          <strong>Email:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        </p>
+          <p>
+            <strong>Location:</strong> {profile.location} <br />
+            <strong>Email:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          </p>
 
-        <div className="contact-links">
-          <a href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
-          <a href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={profile.links.orcid} target="_blank" rel="noreferrer">ORCID</a>
-        </div>
-      </CardSection>
+          <div className="contact-links">
+            <a href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href={profile.links.orcid} target="_blank" rel="noreferrer">ORCID</a>
+          </div>
+        </CardSection>
 
-      {/* Education Timeline */}
-      <section className="timeline">
-        <h3>Education</h3>
-        <div className="timeline-container">
-          {profile.education.map((edu, index) => (
-            <div key={index} className="timeline-item"> {/* These items will now be revealed */}
-              <div className="timeline-marker" />
-              <div className="timeline-content">
-                <h4>{edu.degree}</h4>
-                <p className="timeline-institution">{edu.school}</p>
-                <p className="timeline-date">
-                  {edu.start} – {edu.end}
-                </p>
-                {edu.description && (
-                  <p className="timeline-details">{edu.description}</p>
-                )}
+        {/* Education Timeline */}
+        <section className="timeline">
+          <h3>Education</h3>
+          <div className="timeline-container">
+            {profile.education.map((edu, index) => (
+              <div key={index} className="timeline-item"> {/* These items will now be revealed */}
+                <div className="timeline-marker" />
+                <div className="timeline-content">
+                  <h4>{edu.degree}</h4>
+                  <p className="timeline-institution">{edu.school}</p>
+                  <p className="timeline-date">
+                    {edu.start} – {edu.end}
+                  </p>
+                  {edu.description && (
+                    <p className="timeline-details">{edu.description}</p>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      {/* Experience Timeline */}
-      <section className="timeline">
-        <h3>Professional Experience</h3>
-        <div className="timeline-container">
-          {profile.experience.map((exp, index) => (
-            <div key={index} className="timeline-item"> {/* These items will now be revealed */}
-              <div className="timeline-marker" />
-              <div className="timeline-content">
-                <h4>{exp.role}</h4>
-                <p className="timeline-institution">
-                  {exp.org} — {exp.location}
-                </p>
-                <p className="timeline-date">
-                  {exp.start} – {exp.end}
-                </p>
-                <ul className="timeline-details">
-                  {exp.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
+        {/* Experience Timeline */}
+        <section className="timeline">
+          <h3>Professional Experience</h3>
+          <div className="timeline-container">
+            {profile.experience.map((exp, index) => (
+              <div key={index} className="timeline-item"> {/* These items will now be revealed */}
+                <div className="timeline-marker" />
+                <div className="timeline-content">
+                  <h4>{exp.role}</h4>
+                  <p className="timeline-institution">
+                    {exp.org} — {exp.location}
+                  </p>
+                  <p className="timeline-date">
+                    {exp.start} – {exp.end}
+                  </p>
+                  <ul className="timeline-details">
+                    {exp.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      {/* Skills Section */}
-      <CardSection title="Skills & Tools">
-        <ul>
-          <li><strong>Experimental:</strong> {profile.skills.experimental.join(", ")}</li>
-          <li><strong>Programming:</strong> {profile.skills.programming.join(", ")}</li>
-          <li><strong>AI & Data:</strong> {profile.skills.ai.join(", ")}</li>
-          <li><strong>Tools:</strong> {profile.skills.tools.join(", ")}</li>
-        </ul>
-      </CardSection>
+        {/* Skills Section */}
+        <CardSection title="Skills & Tools">
+          <ul>
+            <li><strong>Experimental:</strong> {profile.skills.experimental.join(", ")}</li>
+            <li><strong>Programming:</strong> {profile.skills.programming.join(", ")}</li>
+            <li><strong>AI & Data:</strong> {profile.skills.ai.join(", ")}</li>
+            <li><strong>Tools:</strong> {profile.skills.tools.join(", ")}</li>
+          </ul>
+        </CardSection>
 
-      {/* Personal Info */}
-      <CardSection title="Additional Info">
-        <p><strong>Languages:</strong> {profile.languages.join(", ")}</p>
-        <p><strong>Publications:</strong> {profile.publicationsCount} peer-reviewed papers</p>
-        <p><strong>Interests:</strong> {profile.interests.join(", ")}</p>
-      </CardSection>
-    </main>
+        {/* Personal Info */}
+        <CardSection title="Additional Info">
+          <p><strong>Languages:</strong> {profile.languages.join(", ")}</p>
+          <p><strong>Publications:</strong> {profile.publicationsCount} peer-reviewed papers</p>
+          <p><strong>Interests:</strong> {profile.interests.join(", ")}</p>
+        </CardSection>
+      </main>
+    </PageLayout>
   );
 };
 

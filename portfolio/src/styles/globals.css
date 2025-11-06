@@ -1,9 +1,5 @@
-/* =====================================================
-   globals.css
-   (Extracted from App.css, Sections 1.2, 1.4, and Global Responsive Fix)
-   ===================================================== */
-
-/* --- Global Element Styles (body, a, #root) --- */
+/* --- EXISTING GLOBAL STYLES (ASSUMED) --- */
+/* (e.g., font family, base colors, etc.) */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -55,7 +51,81 @@ a:hover {
 /* --- Global Responsive Body Fix (Content Hiding) --- */
 @media (max-width: 768px) {
     body {
-        /* This is the crucial fix for when the navbar expands on mobile */
-        padding-top: calc(var(--navbar-height) + 15rem);
+        /* 🔴 FIX: Reverting to a small padding (e.g., 4rem) to clear the short,
+           collapsed mobile navbar. This fixes the Home page starting too low. */
+        padding-top: 4rem;
+    }
+
+    /* The body.has-profile-image class is technically now redundant
+       if the padding value is the same, but we keep it for future adjustments.
+    */
+    body.has-profile-image {
+        padding-top: 4rem;
+    }
+}
+
+
+/* =====================================================
+   LAYOUT OFFSETS (FIX for Fixed Profile Image)
+   ===================================================== */
+
+/* This wrapper class is applied by PageLayout.jsx to push
+   content below the fixed Navbar.
+*/
+.content-wrapper {
+    /* 🔴 CRITICAL FIX: Setting padding-top to 0.
+       The body element already provides the necessary top padding.
+       This removes the double-height offset on the Home page. */
+    padding-top: 0;
+    padding-bottom: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 🟢 FIX: Layout offset for pages that contain the fixed profile image */
+/* This class is applied directly to the <main> element on non-Home pages */
+.fixed-image-offset {
+    /* Required space:
+       1.5rem (left offset) + 120px (image width) + 1.5rem (safety margin)
+       Calculated to be 10.5rem (approx. 168px) on desktop.
+    */
+    padding-left: 10.5rem;
+
+    /* 🟢 NEW FIX: Ensure pages with the fixed image have 2rem top padding
+       (to match the original intent) */
+    padding-top: 2rem;
+}
+
+/* 🟢 UPDATE: Base style for main (applies to HOME page) */
+main {
+    /* Base padding for pages that DON'T have the fixed image offset (i.e., HOME)
+       This is now 1rem (down from 2rem) to make the Home card start higher. */
+    padding: 1rem 4rem 4rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Adjust main padding for smaller screens */
+@media (max-width: 1024px) {
+    main {
+        padding-right: 2rem; /* Consistent side padding */
+        padding-left: 2rem;
+    }
+}
+@media (max-width: 600px) {
+    main {
+        padding-right: 1rem; /* Tighter side padding on small screens */
+        padding-left: 1rem;
+    }
+}
+
+
+/* Mobile Adjustment: The fixed image is centered at the top on mobile */
+@media (max-width: 768px) {
+    /* 🔴 Mobile: The image is centered at the top, so we need vertical offset only. */
+    .fixed-image-offset {
+        padding-left: 0; /* Remove horizontal offset */
+        /* Set padding-top explicitly to ensure the main content starts below the centered mobile image */
+        padding-top: 8rem;
     }
 }

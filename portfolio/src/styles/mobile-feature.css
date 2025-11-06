@@ -1,0 +1,90 @@
+/* =====================================================
+   mobile-feature.css (Final Styling)
+   ===================================================== */
+
+/* ---------------------------------- */
+/* 🟢 DESKTOP STYLES (Larger and Subtle) */
+/* ---------------------------------- */
+.mobile-feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  /* 🛠️ Increased Size for desktop to fit the 18rem navbar */
+  width: auto;
+  max-width: 300px;
+  height: 140px; /* Adjusted height to accommodate 120px icon + padding */
+  padding: 0.5rem 0.75rem;
+
+  background-color: #151525;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 255, 247, 0.2);
+
+  pointer-events: none;
+}
+
+.mobile-feature > * {
+    pointer-events: auto;
+}
+
+.mobile-feature-animation {
+  width: 220px; /* 🛠️ CORRECTED: Assuming 220px, as 2200px would break layout */
+  height: 220px; /* 🛠️ UPDATED: Increased icon size */
+  margin-right: 0.75rem;
+  filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+.mobile-feature-tagline {
+  font-size: 1.1rem; /* Slightly increased text size */
+  font-weight: 500;
+  text-align: center;
+  color: var(--accent-color);
+  text-shadow: none;
+  margin: 0;
+}
+
+
+/* ---------------------------------- */
+/* 🔴 MOBILE STYLES (Larger Card in Dropdown) */
+/* ---------------------------------- */
+@media (max-width: 768px) {
+  .mobile-feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* CRITICAL FIX: Card size for mobile */
+    width: 90%;
+    max-width: 250px;
+    height: 12rem;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    background-color: #151525;
+    border-radius: var(--border-radius);
+    border-top: 1px solid rgba(0, 255, 247, 0.2);
+    padding: 0.8rem 1.2rem;
+  }
+
+  /* Ensure the container for the animation also has center alignment */
+  .mobile-feature-animation {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.2rem;
+    filter: drop-shadow(0 0 10px var(--accent-color));
+    align-self: center;
+    margin-right: 0;
+  }
+
+  .mobile-feature-tagline {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--accent-color);
+    margin: 0;
+  }
+}

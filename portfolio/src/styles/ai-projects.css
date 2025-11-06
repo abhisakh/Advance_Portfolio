@@ -1,0 +1,29 @@
+/* =====================================================
+   ai-projects.css - Styles specific to the AI Projects page layout.
+   (Projects themselves should use generic CardSection styles.)
+   ===================================================== */
+
+/* Example of a custom grid layout for projects if CardSection isn't enough */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Style for the main headline or intro text on this page */
+.ai-intro-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 1.5rem;
+    }
+}
