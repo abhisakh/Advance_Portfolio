@@ -1,96 +1,141 @@
-import React from "react";
-import ProfileImage from "../components/ProfileImage";
-import "../App.css";
+// src/pages/About.jsx
+import React, { useEffect } from "react"; // 👈 IMPORT useEffect
+import profile from "../data/profileData";
 import CareerTimeline from "../components/CareerTimeline";
+import ProfileImage from "../components/ProfileImage";
+import CardSection from "../components/CardSection";
 
 const About = () => {
+
+  // ----------------------------------------------------
+  // ✅ IMPLEMENTATION OF INTERSECTION OBSERVER FOR SCROLL-REVEAL
+  // ----------------------------------------------------
+  useEffect(() => {
+    // 1. Target the elements that need to be revealed
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    // 2. Define the observer's settings
+    const observerOptions = {
+      root: null, // relative to the viewport
+      rootMargin: "0px",
+      threshold: 0.1 // trigger when 10% of the item is visible
+    };
+
+    // 3. Create the observer function
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add the visible class, which switches opacity from 0 to 1
+          entry.target.classList.add('is-visible');
+          // Stop observing this element since it is now visible
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // 4. Start observing each timeline item
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+
+    // 5. Cleanup function: stop observing when the component unmounts
+    return () => {
+      timelineItems.forEach(item => {
+        // Need to check if it's still being observed before unobserving
+        if (item) {
+           observer.unobserve(item);
+        }
+      });
+    };
+  }, []); // Empty dependency array ensures this runs only once after the initial render
+  // ----------------------------------------------------
+
   return (
     <main className="content-wrapper">
-      {/* Profile photo */}
+      {/* Top Profile Image */}
       <ProfileImage size={120} />
 
-      {/* About Section */}
-      <section className="card about-section">
-        <h2>About Me</h2>
-        <p>
-          I’m <strong>Dr. Abhisakh Sarma</strong>, an experimental physicist with
-          a deep background in laser-based spectroscopy, large-scale
-          instrumentation, and data analysis. I recently concluded my work at
-          the <strong>European XFEL (EuXFEL)</strong> in Hamburg (until May 2025),
-          where I developed and optimized advanced photon diagnostics and
-          contributed to high-precision measurement systems supporting
-          ultrafast X-ray experiments.
-        </p>
+      {/* Intro Section */}
+      <CardSection title={`About ${profile.name}`}>
+        <p className="headline">{profile.headline}</p>
+        <p>{profile.summary}</p>
 
         <p>
-          Over the years I’ve authored and co-authored more than 30 scientific
-          publications, collaborating with international teams across Europe
-          and Asia. My research centered on spectroscopy, vacuum instrumentation,
-          and optical systems, combining hands-on experimental work with
-          computational data interpretation and automation.
+          <strong>Location:</strong> {profile.location} <br />
+          <strong>Email:</strong> <a href={`mailto:${profile.email}`}>{profile.email}</a>
         </p>
 
-        <p>
-          In June 2025 I began an intensive AI Engineering and Software Development
-          training at the <strong>Masterschool Institute of Technology, Berlin</strong>,
-          funded by the Bundesagentur für Arbeit. This transition builds on my
-          physics and data-driven experience, enabling me to bridge scientific
-          problem-solving with modern technologies in machine learning,
-          data science, and AI systems engineering.
-        </p>
-
-        <p>
-          My goal is to integrate my physics intuition with modern software and
-          AI tools to develop intelligent, data-centric solutions for scientific
-          research, healthcare innovation, and industrial automation. I’m
-          particularly interested in explainable AI, computer vision, and
-          predictive modeling for real-world experiments.
-        </p>
-
-        <p>
-          I bring a multidisciplinary mindset — a mix of physics, programming,
-          and curiosity — to every project I work on. Whether developing
-          algorithms, building instrumentation control interfaces, or teaching,
-          I thrive on translating complex data into meaningful insight.
-        </p>
-
-        <div className="about-highlights">
-          <h3>Core Competencies</h3>
-          <ul>
-            <li>Experimental Physics & Laser Spectroscopy</li>
-            <li>Data Analysis & Statistical Modeling (Python, NumPy, Pandas)</li>
-            <li>Machine Learning & AI Engineering (scikit-learn, TensorFlow)</li>
-            <li>Software Development & Version Control (Git, GitHub)</li>
-            <li>Scientific Instrumentation & Control Systems (LabVIEW, MATLAB)</li>
-            <li>Collaborative Research & Scientific Writing</li>
-          </ul>
+        <div className="contact-links">
+          <a href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={profile.links.orcid} target="_blank" rel="noreferrer">ORCID</a>
         </div>
-        {/* New Timeline Section */}
-        <CareerTimeline />
-        <div className="about-links">
-          <a
-            href="https://github.com/abhisakh"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub Profile
-          </a>
-          <a
-            href="https://www.linkedin.com/in/dr-abhisakh-sarma"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn Profile
-          </a>
-          <a
-            href="https://orcid.org/0000-0002-0785-8902"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ORCID Publications
-          </a>
+      </CardSection>
+
+      {/* Education Timeline */}
+      <section className="timeline">
+        <h3>Education</h3>
+        <div className="timeline-container">
+          {profile.education.map((edu, index) => (
+            <div key={index} className="timeline-item"> {/* These items will now be revealed */}
+              <div className="timeline-marker" />
+              <div className="timeline-content">
+                <h4>{edu.degree}</h4>
+                <p className="timeline-institution">{edu.school}</p>
+                <p className="timeline-date">
+                  {edu.start} – {edu.end}
+                </p>
+                {edu.description && (
+                  <p className="timeline-details">{edu.description}</p>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
+
+      {/* Experience Timeline */}
+      <section className="timeline">
+        <h3>Professional Experience</h3>
+        <div className="timeline-container">
+          {profile.experience.map((exp, index) => (
+            <div key={index} className="timeline-item"> {/* These items will now be revealed */}
+              <div className="timeline-marker" />
+              <div className="timeline-content">
+                <h4>{exp.role}</h4>
+                <p className="timeline-institution">
+                  {exp.org} — {exp.location}
+                </p>
+                <p className="timeline-date">
+                  {exp.start} – {exp.end}
+                </p>
+                <ul className="timeline-details">
+                  {exp.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <CardSection title="Skills & Tools">
+        <ul>
+          <li><strong>Experimental:</strong> {profile.skills.experimental.join(", ")}</li>
+          <li><strong>Programming:</strong> {profile.skills.programming.join(", ")}</li>
+          <li><strong>AI & Data:</strong> {profile.skills.ai.join(", ")}</li>
+          <li><strong>Tools:</strong> {profile.skills.tools.join(", ")}</li>
+        </ul>
+      </CardSection>
+
+      {/* Personal Info */}
+      <CardSection title="Additional Info">
+        <p><strong>Languages:</strong> {profile.languages.join(", ")}</p>
+        <p><strong>Publications:</strong> {profile.publicationsCount} peer-reviewed papers</p>
+        <p><strong>Interests:</strong> {profile.interests.join(", ")}</p>
+      </CardSection>
     </main>
   );
 };
