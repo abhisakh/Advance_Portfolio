@@ -1,0 +1,117 @@
+/* =====================================================
+   instrumentation.css — Scientific Instrumentation Layout
+   ===================================================== */
+
+.instrumentation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+/* Card container */
+.instrumentation-card {
+  background: linear-gradient(145deg, #11101b, #1a1a2e);
+  border: 1px solid rgba(0, 255, 247, 0.15);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1rem rgba(0, 255, 247, 0.08);
+  padding: 1.8rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.instrumentation-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glowing hover effect */
+.instrumentation-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 247, 0.15) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.instrumentation-card:hover::before {
+  opacity: 1;
+}
+
+.instrumentation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 2rem rgba(0, 255, 247, 0.25);
+  border-color: rgba(0, 255, 247, 0.35);
+}
+
+/* Header (icon + title) */
+.instrumentation-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.instrumentation-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 0.5rem var(--accent-color));
+}
+
+.instrumentation-card h3 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* Description */
+.instrumentation-description {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+/* Techniques List */
+.instrumentation-techniques {
+  padding-left: 1.5rem;
+  list-style: disc;
+  margin: 0;
+}
+
+.instrumentation-techniques li {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+.instrumentation-techniques li:hover {
+  color: var(--accent-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .instrumentation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instrumentation-card {
+    padding: 1.2rem;
+  }
+
+  .instrumentation-card h3 {
+    font-size: 1.15rem;
+  }
+}

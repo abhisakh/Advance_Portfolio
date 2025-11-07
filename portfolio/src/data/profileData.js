@@ -90,7 +90,60 @@ const profile = {
     ai: ["Machine Learning", "Data Pipelines", "Visualization"],
     tools: ["Ansys", "ZEMAX", "Docker", "Git"],
   },
-
+  // Data for InstrumentationPage
+    instrumentation: [
+        {
+            category: "Growth & Fabrication",
+            description: "Expertise in creating complex materials and structures, from thin films to quantum dots.",
+            techniques: [
+                "Molecular Beam Epitaxy (MBE)",
+                "Magnetron Sputtering Deposition",
+                "Thermal & Electron Beam Evaporation",
+                "Electrochemical & Chemical Deposition",
+                "Photolithography & Electron Beam Lithography (EBL)",
+                "Focused Ion Beam (FIB) Patterning",
+                "Pouch Cell Assembly (Battery)",
+            ]
+        },
+        {
+            category: "Microscopy & Characterization",
+            description: "High-resolution analysis of material morphology, structure, and composition.",
+            techniques: [
+                "Scanning X-ray Diffraction Microscopy (SXDM)",
+                "Scanning Electron Microscopy (SEM)",
+                "Scanning/Transmission Electron Microscopy (S/TEM)",
+                "Atomic Force Microscopy (AFM)",
+                "Ellipsometry, Brewster Angle Microscopy",
+                "Scanning Tunneling Microscopy (STM)",
+                "Electron Diffraction",
+            ]
+        },
+        {
+            category: "Spectroscopy & Structure",
+            description: "Advanced techniques for probing electronic, chemical, and structural properties.",
+            techniques: [
+                "X-ray Photoemission Spectroscopy (XPS)",
+                "X-ray Fluorescence Spectroscopy (XFS)",
+                "Electronic Impedance Spectroscopy (EIS)",
+                "Ultraviolet-visible Spectroscopy (UV-Vis)",
+                "Raman & FTIR Spectroscopy",
+                "Energy-Dispersive X-ray Spectroscopy (EDS)",
+                "X-ray Diffraction (XRD) & Reflectivity (XRR)",
+                "Interferometry",
+            ]
+        },
+        {
+            category: "Data Analysis & Control",
+            description: "Proficiency in software for instrumentation control, simulation, and big data analysis.",
+            techniques: [
+                "Python (Pandas, NumPy, Scipy, Data Analysis)",
+                "MATLAB (Data Analysis & Simulation)",
+                "LabVIEW (Instrument Control Software)",
+                "Simulation Tools (FDTD, DGTD)",
+                "Software (ImageJ, Mathematica, Origin, Dpdak, GSAS)",
+            ]
+        },
+    ],
   // --- FINALIZED PUBLICATIONS LIST ---
   publications: [
     {

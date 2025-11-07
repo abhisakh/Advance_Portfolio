@@ -1,34 +1,62 @@
-import React from 'react';
-import ProfileImage from '../components/ProfileImage';
-import CardSection from '../components/CardSection';
-import PageLayout from '../components/PageLayout';
-import PublicationCard from '../components/PublicationCard'; // Component to render each publication
-import profile from '../data/profileData'; // Centralized data source
+import React, { useState } from "react";
+import profile from "../data/profileData";
+import ProfileImage from "../components/ProfileImage";
+import CardSection from "../components/CardSection";
+import PageLayout from "../components/PageLayout";
+import "../styles/publications.css";
 
 const Publications = () => {
-  // Get the list of publications from the imported profile data
-  const publications = profile.publications;
+  const [search, setSearch] = useState("");
+
+  // 🔍 Smarter search: title + journal + date (year) + DOI
+  const filteredPubs = profile.publications.filter((pub) =>
+  [pub.title, pub.journal, pub.date, pub.doi]
+  .join(" ")
+  .toLowerCase()
+  .includes(search.toLowerCase())
+  );
 
   return (
     <PageLayout pageTitle="Publications">
       <main className="fixed-image-offset">
         <ProfileImage size={120} />
-        <CardSection title="Research Publications">
-          <p className="text-base mb-8 text-gray-300">
-            A complete list of my **{profile.publicationsCount}** peer-reviewed research publications, highlighting my contributions across X-ray science, materials, and nanoscience.
+
+        <CardSection title={`${profile.publicationsCount} Publications`}>
+          <p>
+            A collection of my peer-reviewed scientific works in
+            <strong> physics, spectroscopy, nanomaterials, and AI-assisted research</strong>.
           </p>
 
-          {/* Grid layout for publications on desktop, stack on mobile */}
-          <div className="space-y-6">
-            {publications.map((pub) => (
-              <PublicationCard
-                key={pub.id}
-                publication={pub} // Pass the individual publication object to the card
-              />
-            ))}
-          </div>
-
+          <input
+            type="text"
+            className="publication-search"
+            placeholder="🔍 Search publications..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </CardSection>
+
+        <section className="publication-grid">
+          {filteredPubs.map((pub) => (
+            <div key={pub.id} className="publication-card">
+              <h3>{pub.title}</h3>
+              <p className="journal">{pub.journal}</p>
+              <p className="pub-date">{pub.date}</p>
+              <a
+                href={`https://doi.org/${pub.doi}`}
+                target="_blank"
+                rel="noreferrer"
+                className="doi-link"
+              >
+                🔗 DOI: {pub.doi}
+              </a>
+            </div>
+          ))}
+
+          {filteredPubs.length === 0 && (
+            <p className="no-results">No publications found for “{search}”</p>
+          )}
+        </section>
       </main>
     </PageLayout>
   );

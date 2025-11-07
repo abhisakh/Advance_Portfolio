@@ -1,0 +1,109 @@
+/* =====================================================
+   publications.css — Publications Layout & Animation
+   ===================================================== */
+
+.publication-search {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(0, 255, 247, 0.3);
+  border-radius: var(--border-radius);
+  background-color: #1a1a2e;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.publication-search:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 1rem rgba(0, 255, 247, 0.3);
+  outline: none;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 247, 0.3);
+  background-color: #1a1a2e;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0.5rem rgba(0, 255, 247, 0.5);
+}
+
+/* Grid Layout */
+.publication-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Publication Card */
+.publication-card {
+  background: linear-gradient(145deg, #11101b, #1a1a2e);
+  border: 1px solid rgba(0, 255, 247, 0.15);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1rem rgba(0, 255, 247, 0.1);
+  padding: 1.5rem;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.publication-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 247, 0.35);
+  box-shadow: 0 0 1.5rem rgba(0, 255, 247, 0.25);
+}
+
+.publication-card h3 {
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.journal {
+  color: #bbb;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.pub-date {
+  color: #999;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.doi-link {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+.doi-link:hover {
+  color: var(--accent-hover);
+}
+
+.no-results {
+  color: #aaa;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .publication-card {
+    padding: 1rem;
+  }
+}
