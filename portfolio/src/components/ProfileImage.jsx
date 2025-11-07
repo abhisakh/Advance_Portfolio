@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePic from '../assets/profile.jpg'; // <-- RE-ADDED LOCAL IMAGE IMPORT
+import profilePic from '../assets/profile_1.jpg'; // <-- RE-ADDED LOCAL IMAGE IMPORT
 
 /**
  * Renders a fixed profile image element styled to sit at the top-left.

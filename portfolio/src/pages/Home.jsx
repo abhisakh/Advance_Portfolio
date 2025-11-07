@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import profilePic from '../assets/profile.jpg';
+import profilePic from '../assets/profile_1.jpg';
 import CardSection from '../components/CardSection';
 import PageLayout from '../components/PageLayout'; // 👈 IMPORT PageLayout
 
