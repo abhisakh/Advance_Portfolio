@@ -1,5 +1,5 @@
 /* =====================================================
-   contact.css — Final Layout-Fixed Version
+   contact.css — Balanced Alignment (matches other cards)
    ===================================================== */
 
 .contact-container {
@@ -8,10 +8,13 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  max-width: 700px;
+  max-width: 560px; /* 🟢 consistent with other CardSection widths */
   margin: 0 auto;
   padding: 2rem 1rem;
   box-sizing: border-box;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
 }
 
 /* --- Contact Form --- */
@@ -27,8 +30,18 @@
   padding: 2rem;
   margin-top: 1rem;
   transition: all 0.35s ease;
+  box-sizing: border-box;
 }
 
+/* Ensure the CardSection wrapper aligns with the form */
+.card-section {
+  width: 100%;
+  max-width: 560px; /* 🟢 same as form container */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- Inputs --- */
 .contact-form input,
 .contact-form textarea {
   background-color: #222;
@@ -38,7 +51,10 @@
   border-radius: var(--border-radius);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-
+.contact-form input:hover,
+.contact-form textarea:hover {
+  box-shadow: 0 0 0.5rem rgba(0, 255, 247, 0.25);
+}
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--accent-color);
@@ -92,7 +108,7 @@
   box-shadow: 0 0 1.2rem var(--accent-hover);
 }
 
-/* --- Success Overlay Animation --- */
+/* --- Success Overlay --- */
 .success-overlay {
   position: fixed;
   top: 0;
@@ -123,9 +139,22 @@
   color: var(--text-color);
 }
 
+/* --- Animation --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  .contact-container {
+  .contact-container,
+  .card-section {
     max-width: 100%;
     padding: 1.5rem 1rem;
   }

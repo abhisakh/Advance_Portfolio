@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import CardSection from '../components/CardSection';
 import ProfileImage from '../components/ProfileImage';
 import PageLayout from '../components/PageLayout';
-import '../styles/contact.css'; // ✅ Ensure CSS is imported
+import '../styles/contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +13,6 @@ const Contact = () => {
     subject: '',
     message: '',
   });
-
   const [status, setStatus] = useState({ loading: false, success: false, error: null });
 
   const handleChange = (e) => {
@@ -44,64 +43,112 @@ const Contact = () => {
       );
   };
 
+  // ✨ Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut', when: 'beforeChildren', staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
   return (
     <PageLayout pageTitle="Contact">
       <main className="fixed-image-offset">
         <ProfileImage size={120} />
 
-        <CardSection title="Contact Me">
-          {/* 🧭 NEW WRAPPER ensures centered layout */}
-          <div className="contact-container">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <input
+        {/* 🪄 Animated Card Section */}
+        <motion.div
+          className="contact-container"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <CardSection title="Contact Me">
+            <motion.form
+              className="contact-form"
+              onSubmit={handleSubmit}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.input
                 type="text"
                 name="from_name"
                 placeholder="Your Name"
                 value={formData.from_name}
                 onChange={handleChange}
                 required
+                variants={itemVariants}
               />
-              <input
+              <motion.input
                 type="email"
                 name="from_email"
                 placeholder="Your Email"
                 value={formData.from_email}
                 onChange={handleChange}
                 required
+                variants={itemVariants}
               />
-              <input
+              <motion.input
                 type="text"
                 name="subject"
                 placeholder="Subject"
                 value={formData.subject}
                 onChange={handleChange}
+                variants={itemVariants}
               />
-              <textarea
+              <motion.textarea
                 name="message"
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
                 rows="6"
                 required
+                variants={itemVariants}
               />
-              <button type="submit" className="contact-submit" disabled={status.loading}>
+              <motion.button
+                type="submit"
+                className="contact-submit"
+                disabled={status.loading}
+                variants={itemVariants}
+              >
                 {status.loading ? 'Sending...' : 'Send Message'}
-              </button>
-            </form>
+              </motion.button>
+            </motion.form>
 
             {status.error && (
-              <p className="contact-error">{status.error}</p>
+              <motion.p
+                className="contact-error"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                {status.error}
+              </motion.p>
             )}
 
-            <div className="contact-links">
-              <a href="https://github.com/abhisakh" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/dr-abhisakh-sarma" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://orcid.org/0000-0002-0785-8902" target="_blank" rel="noopener noreferrer">ORCID</a>
-            </div>
-          </div>
-        </CardSection>
+            <motion.div className="contact-links" variants={containerVariants}>
+              <motion.a href="https://github.com/abhisakh" target="_blank" rel="noopener noreferrer" variants={itemVariants}>
+                GitHub
+              </motion.a>
+              <motion.a href="https://www.linkedin.com/in/dr-abhisakh-sarma" target="_blank" rel="noopener noreferrer" variants={itemVariants}>
+                LinkedIn
+              </motion.a>
+              <motion.a href="https://orcid.org/0000-0002-0785-8902" target="_blank" rel="noopener noreferrer" variants={itemVariants}>
+                ORCID
+              </motion.a>
+            </motion.div>
+          </CardSection>
+        </motion.div>
 
-        {/* ✅ Success Overlay Animation */}
+        {/* ✅ Success Animation Overlay */}
         <AnimatePresence>
           {status.success && (
             <motion.div
