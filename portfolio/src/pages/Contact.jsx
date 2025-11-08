@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import CardSection from '../components/CardSection';
 import ProfileImage from '../components/ProfileImage';
-import PageLayout from '../components/PageLayout'; // 👈 IMPORT PageLayout
+import PageLayout from '../components/PageLayout';
+import '../styles/contact.css'; // ✅ Ensure CSS is imported
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,83 +26,82 @@ const Contact = () => {
     setStatus({ loading: true, success: false, error: null });
 
     emailjs
-      .send(
-        'service_v0k7of',
-        'template_zfx02eu',
-        formData,
-        '3FmPkk6tBfERYp_x3'
-      )
+      .send('service_v0k7of', 'template_zfx02eu', formData, '3FmPkk6tBfERYp_x3')
       .then(
         () => {
           setStatus({ loading: false, success: true, error: null });
           setFormData({ from_name: '', from_email: '', subject: '', message: '' });
-
-          // Hide animation after 3 seconds
           setTimeout(() => setStatus({ ...status, success: false }), 3000);
         },
         (error) => {
           console.error('EmailJS Error:', error);
-          setStatus({ loading: false, success: false, error: 'Failed to send message. Please try again.' });
+          setStatus({
+            loading: false,
+            success: false,
+            error: 'Failed to send message. Please try again.',
+          });
         }
       );
   };
 
   return (
-    <PageLayout pageTitle="Contact"> {/* 👈 WRAPPED CONTENT */}
-      {/* 🟢 FIX: Added fixed-image-offset class here */}
+    <PageLayout pageTitle="Contact">
       <main className="fixed-image-offset">
         <ProfileImage size={120} />
 
         <CardSection title="Contact Me">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Your Name"
-              value={formData.from_name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="from_email"
-              placeholder="Your Email"
-              value={formData.from_email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
-              onChange={handleChange}
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="6"
-              required
-            />
-            <button type="submit" className="contact-submit" disabled={status.loading}>
-              {status.loading ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
+          {/* 🧭 NEW WRAPPER ensures centered layout */}
+          <div className="contact-container">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Your Name"
+                value={formData.from_name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Your Email"
+                value={formData.from_email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="6"
+                required
+              />
+              <button type="submit" className="contact-submit" disabled={status.loading}>
+                {status.loading ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
 
-          {status.error && (
-            <p style={{ color: 'tomato', marginTop: '1rem' }}>{status.error}</p>
-          )}
+            {status.error && (
+              <p className="contact-error">{status.error}</p>
+            )}
 
-          <div className="contact-links" style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
-            <a href="https://github.com/abhisakh" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/dr-abhisakh-sarma" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://orcid.org/0000-0002-0785-8902" target="_blank" rel="noopener noreferrer">ORCID</a>
+            <div className="contact-links">
+              <a href="https://github.com/abhisakh" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/dr-abhisakh-sarma" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://orcid.org/0000-0002-0785-8902" target="_blank" rel="noopener noreferrer">ORCID</a>
+            </div>
           </div>
         </CardSection>
 
-        {/* ✅ Success Animation Overlay */}
+        {/* ✅ Success Overlay Animation */}
         <AnimatePresence>
           {status.success && (
             <motion.div
