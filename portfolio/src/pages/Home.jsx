@@ -10,12 +10,16 @@ const Home = () => {
       <main>
         <Hero
           name="Dr. Abhisakh Sarma"
-          description="I’m an experimental physicist transitioning into AI and data-driven development.
-          I love exploring the intersection of science, data, and intelligent systems —
-          transforming complex data into insights and impactful tools."
+          description="I'm an experimental physicist (PhD), transitioning into software engineering,
+          specializing in AI and data-driven development. I combine deep expertise in large-scale
+          data processing, complex system modeling, and quantitative analysis with practical skills
+          in modern development stacks. Proficient in Python, React, Node.js, and CI/CD pipelines
+          from a Full-Stack program, I am actively seeking a Junior Software Engineer position
+          (Fullstack, Backend, or AI) to apply my analytical strength to build robust, scalable,
+          and impactful data systems."
           image={profilePic}   // <-- Your existing Hero props are preserved
         />
-        <CardSection /> {/* Assuming you'll have other sections */}
+        {/*<CardSection /> */}{/* Assuming you'll have other sections */}
       </main>
     </PageLayout>
   );

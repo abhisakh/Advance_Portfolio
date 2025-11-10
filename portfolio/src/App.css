@@ -16,7 +16,7 @@
 
 /* --- 2. Global Utilities & Wrappers (Kept here) --- */
 .content-wrapper {
-  margin-top: var(--navbar-height);
+  margin-top: var(--navbar-height) - 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -6,7 +6,7 @@
 /* --- Desktop Hero Styles --- */
 .hero {
   margin: var(--section-padding) 0 2rem;
-  padding: 0 1rem;
+  padding: 0 6rem;
   max-width: 900px;
   display: flex;
   justify-content: center;

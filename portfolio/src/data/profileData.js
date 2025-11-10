@@ -10,9 +10,9 @@ const profile = {
     orcid: "https://orcid.org/0000-0002-0785-8902",
   },
   headline:
-    "Experimental physicist transitioning into AI engineering and data-driven development (Masterschool, Berlin — started 03 Jun 2025).",
+    "",
     summary:
-    "I’m an experimental physicist with a strong background in spectroscopy, X-ray microscopy, and nanomaterials research — now advancing into AI Engineering and Data Science through professional Weiterbildung (Masterschool, Berlin & Hamburg, funded by Arbeitsagentur). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation.",
+    "As an experimental physicist, I spent a decade managing complex scientific instrumentation (spectroscopy, X-ray microscopy) and guiding international research teams, giving me unique proficiency in Design of Experiment (DoE) and data methodology. I am now advancing into AI Engineering and Data Science through a professional Weiterbildung (Masterschool, Berlin & Hamburg). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation, bridging the gap between deep analytical rigor and modern software implementation.",
   experience: [
     {
       role: "Postdoctoral Research Scientist",
