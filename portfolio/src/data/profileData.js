@@ -12,7 +12,7 @@ const profile = {
   headline:
     "",
     summary:
-    "As an experimental physicist, I spent a decade managing complex scientific instrumentation (spectroscopy, X-ray microscopy) and guiding international research teams, giving me unique proficiency in Design of Experiment (DoE) and data methodology. I am now advancing into AI Engineering and Data Science through a professional Weiterbildung (Masterschool, Berlin & Hamburg). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation, bridging the gap between deep analytical rigor and modern software implementation.",
+    "As an experimental physicist, I spent a decade managing complex scientific instrumentation (Electron Microscopy, Spectroscopy, X-ray Microscopy) and guiding international research teams, giving me unique proficiency in Design of Experiment (DoE) and data methodology. I am now advancing into AI Engineering and Data Science through a professional Weiterbildung (Masterschool, Berlin & Hamburg). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation, bridging the gap between deep analytical rigor and modern software implementation.",
   experience: [
     {
       role: "Postdoctoral Research Scientist",
@@ -80,6 +80,7 @@ const profile = {
   ],
   skills: {
     experimental: [
+      "Electron Microscopy",
       "X-ray Microscopy",
       "Spectroscopy",
       "Nanomaterials",
