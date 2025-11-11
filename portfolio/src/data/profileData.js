@@ -73,7 +73,7 @@ const profile = {
     },
     {
       degree: "B.Sc. in Physics",
-      school: "University of Kalyani",
+      school: "University of Kalyani, India",
       start: "2000",
       end: "2003",
     },
