@@ -66,7 +66,7 @@ const profile = {
       end: "2014",
     },
     {
-      degree: "M.Sc. in Physics (Electronics)",
+      degree: "M.Sc. in Physics (Condensed Matter, Electronics)",
       school: "University of Kalyani",
       start: "2003",
       end: "2006",
