@@ -746,7 +746,7 @@ const profile = {
   ],
   publicationsCount: 25,
   languages: ["English (Proficient)", "German (Intermediate)"],
-  interests: ["AI in Science", "Data-Driven Research", "Instrument Design", "Piano"],
+  interests: ["AI in Science", "Data-Driven Research", "Instrument Design", "Music(Piano)", "Painting"],
 };
 
 export default profile;
