@@ -61,13 +61,13 @@ const profile = {
     },
     {
       degree: "Ph.D. in Physics (Materials Science)",
-      school: "University of Calcutta",
+      school: "University of Kolkata, India",
       start: "2007",
       end: "2014",
     },
     {
       degree: "M.Sc. in Physics (Condensed Matter, Electronics)",
-      school: "University of Kalyani",
+      school: "University of Kalyani, India",
       start: "2003",
       end: "2006",
     },
