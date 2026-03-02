@@ -166,7 +166,7 @@ const profile = {
       highlights: [
         "Self-Correcting intelligence for writing scientific report.",
         "Citation-Grounded reporting (no Hallucination).",
-        "EU AI Act Compliant Transparency(audit trail, Debug Console,)."
+        "EU AI Act Compliant Transparency (audit trail, Debug Console)."
       ]
     },
     {
