@@ -9,7 +9,7 @@
   top: calc(var(--navbar-height) + 1.2rem);
   left: 1.5rem;
   width: 120px;
-  height: 120px;
+  height: 180px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--accent-color);
