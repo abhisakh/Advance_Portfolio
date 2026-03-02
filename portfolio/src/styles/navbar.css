@@ -25,12 +25,12 @@
 
 .navbar .logo {
   /* CHANGE: Increase or decrease this value to tune size */
-  font-size: 4rem;
+  font-size: 3.5rem;
 
   /* OPTIONAL: Fine-tuning the look */
   font-weight: 800;             /* Extra bold for a professional logo feel */
   letter-spacing: -1px;         /* Tighter spacing looks more modern */
-  line-height: 4;               /* Prevents extra height from being added */
+  line-height: 3.5;               /* Prevents extra height from being added */
   color: var(--accent-color);
   text-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
   /* 2. PUSHES subsequent content (menu-content-row) to the bottom */
