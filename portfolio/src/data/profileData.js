@@ -146,6 +146,27 @@ const profile = {
         },
     ],
   projectsdata: [
+      {
+      name: "Research LLM(Multiagent + LangGraph)",
+      tags: ["AI", "RAG", "Multiagent", "LangGraph", "Cross-encoder Reranker"],
+      description:
+        "Interactive command-line fact-checking game powered by Wikipedia and Google Gemini AI. Players identify the fake statement among true ones generated using Gemini models.",
+      techStack: [
+        "Python",
+        "OpenAI",
+        "Vector DB(FAISS)",
+        "Cross Encoder Reranker",
+        "Pydantic"
+      ],
+      role: "AI Developer & Data Engineer",
+      github: "https://github.com/abhisakh/ResearchLLM_MultiAgent_LangGraph_RagGraph.git",
+      timeline: "Feb 2026",
+      highlights: [
+        "Self-Correcting intelligence for writing scientific report.",
+        "Citation-Grounded reporting (no Hallucination).",
+        "EU AI Act Compliant Transparency(audit trail, Debug Console,)."
+      ]
+    },
     {
       name: "Fake Finder (CLI)",
       tags: ["AI", "Game", "CLI", "Data"],
