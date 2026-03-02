@@ -25,6 +25,10 @@
   object-fit: cover;
   /* This moves the image content DOWN relative to the circle */
   object-position: center top;
+  /* 1.2 = 120% size (20% zoom). Increase this number to zoom more. */
+  transform: scale(1.2);
+  /* Ensures the zoom stays centered or matches your preferred position */
+  transform-origin: center top;
   transition: transform 0.4s ease;
 }
 
