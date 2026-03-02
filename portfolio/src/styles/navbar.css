@@ -30,7 +30,7 @@
   /* OPTIONAL: Fine-tuning the look */
   font-weight: 800;             /* Extra bold for a professional logo feel */
   letter-spacing: -1px;         /* Tighter spacing looks more modern */
-  line-height: 2;               /* Prevents extra height from being added */
+  line-height: 4;               /* Prevents extra height from being added */
   color: var(--accent-color);
   text-shadow: 0 0 8px rgba(0, 255, 247, 0.5);
   /* 2. PUSHES subsequent content (menu-content-row) to the bottom */
