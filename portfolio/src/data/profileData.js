@@ -147,16 +147,18 @@ const profile = {
     ],
   projectsdata: [
       {
-      name: "Research LLM(Multiagent + LangGraph)",
+      name: "Research LLM (Multiagent + LangGraph)",
       tags: ["AI", "RAG", "Multiagent", "LangGraph", "Cross-encoder Reranker"],
       description:
         "Interactive command-line fact-checking game powered by Wikipedia and Google Gemini AI. Players identify the fake statement among true ones generated using Gemini models.",
       techStack: [
         "Python",
-        "OpenAI",
+        "OpenAI + Test-embeddings",
         "Vector DB(FAISS)",
         "Cross Encoder Reranker",
-        "Pydantic"
+        "Pydantic",
+        "FastAPI",
+        "Streamlit"
       ],
       role: "AI Developer & Data Engineer",
       github: "https://github.com/abhisakh/ResearchLLM_MultiAgent_LangGraph_RagGraph.git",
