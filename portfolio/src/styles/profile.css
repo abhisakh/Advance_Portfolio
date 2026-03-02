@@ -6,8 +6,8 @@
 /* --- Desktop Profile Image Styles --- */
 .profile-image-top-left {
   position: fixed;
-  top: calc(var(--navbar-height) + 1.2rem);
-  left: 5rem;
+  top: calc(var(--navbar-height) + 3.2rem);
+  left: 6.5rem;
   width: 180px;
   height: 180px;
   border-radius: 50%;
