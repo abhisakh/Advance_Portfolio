@@ -568,6 +568,54 @@ const profile = {
   publications: [
     {
       id: 1,
+      title: "Time Resolved Study of Laser Induced Ultrafast Alloying Processes in Au/Pd Core Shell Nanorods",
+      journal: "arXiv",
+      date: "March 2026",
+      doi: "10.48550/arXiv.2603.01597",
+      status: 'found',
+    },
+    {
+      id: 2,
+      title: "Minimized sample consumption for time-resolved serial crystallography applied to the redox cycle of human NQO1",
+      journal: "Communications Chemistry",
+      date: "January 2026",
+      doi: "10.1038/s42004-026-01908-9",
+      status: 'found',
+    },
+    {
+      id: 3,
+      title: "Single-Particle X-ray Scattering Reveals a High Local Supersaturation of Precursors as the Origin of CoO Assembly Formation",
+      journal: "arXiv",
+      date: "December 2025",
+      doi: "10.48550/arXiv.2512.08488",
+      status: 'found',
+    },
+    {
+      id: 4,
+      title: "Nonlinear phenomena in X-ray fluorescence from single nanoparticles under extreme conditions",
+      journal: "arXiv",
+      date: "December 2025",
+      doi: "10.48550/arXiv.2512.06118",
+      status: 'found',
+    },
+    {
+      id: 5,
+      title: "Single-particle incoherent diffractive imaging and amplified spontaneous emission in copper nanocubes",
+      journal: "arXiv",
+      date: "December 2025",
+      doi: "10.48550/arXiv.2512.06110",
+      status: 'found',
+    },
+      {
+      id: 6,
+      title: "Ultrasonic cavitation shock wave exfoliation dynamics of 2D materials revealed in situ by MHz XFEL imaging and multiphysics modeling",
+      journal: "Science Advances",
+      date: "November 2025",
+      doi: "10.1126/sciadv.ady9558",
+      status: 'found',
+    },
+    {
+      id: 7,
       title: "Pr and Pfr structures of plant phytochrome A",
       journal: "Nature Communications",
       date: "June 2025",
@@ -575,7 +623,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 2,
+      id: 8,
       title: "Real-Time Monitoring of Thermally Induced Twisting-Untwisting of Noncubic Domains in Au Microcrystallites using X-ray Diffraction Microscopy",
       journal: "ACS Nano",
       date: "May 2025",
@@ -583,7 +631,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 3,
+      id: 9,
       title: "Crystal structure of a bacterial photoactivated adenylate cyclase determined by serial femtosecond and serial synchrotron crystallography",
       journal: "IUCrJ",
       date: "October 2024",
@@ -591,7 +639,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 4,
+      id: 10,
       title: "Study of the conformational dynamics of a bacterial photoactivated adenylate cyclase",
       journal: "Acta Crystallographica Section A: Foundations and Advances",
       date: "August 2024",
@@ -599,7 +647,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 5,
+      id: 11,
       title: "First operation of the JUNGFRAU detector in 16-memory cell mode at European XFEL",
       journal: "Frontiers in Physics",
       date: "November 2023",
@@ -607,7 +655,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 6,
+      id: 12,
       title: "Linear magnetoelectric coupling and type-II multiferroic order in NiMn2O4",
       journal: "Journal of Applied Physics",
       date: "September 2023",
@@ -615,7 +663,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 7,
+      id: 13,
       title: "Unconventional electronic phase transition in SnBi2Te4: role of anomalous thermal expansion",
       journal: "Journal of Physics: Condensed Matter",
       date: "August 2023",
@@ -623,7 +671,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 8,
+      id: 14,
       title: "Significant thermoelectric power and large magnetoresistance associated with elastic coupling in ternary PbBi2Te4",
       journal: "Journal of Solid State Chemistry",
       date: "August 2023",
@@ -631,7 +679,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 9,
+      id: 15,
       title: "Photothermal Synthesis of Copper Sulfide Nanowires for Direct Lithography of Chalcogenides on a Chip",
       journal: "ACS Applied Nano Materials",
       date: "March 2022",
@@ -639,7 +687,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 10,
+      id: 16,
       title: "Effect of silver nanoparticle doping on the physicochemical properties of a room temperature ferroelectric liquid crystal mixture",
       journal: "Journal of Molecular Liquids",
       date: "September 2020",
@@ -647,7 +695,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 11,
+      id: 17,
       title: "Unraveling the Spatial Distribution of Catalytic Non-Cubic Au Phases in a Bipyramidal Microcrystallite by X-Ray Diffraction Microscopy",
       journal: "ACS Nano",
       date: "June 2020",
@@ -655,7 +703,7 @@ const profile = {
       status: 'found',
     },
     {
-      id: 12,
+      id: 18,
       title: "Electrodeposition of nanowires of a high copper content thiourea precursor of copper sulfide",
       "journal": "RSC Advances",
       "date": "October 2019",
@@ -663,7 +711,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 13,
+      id: 19,
       title: "Confinement Induced Growth of Gold Nano-Crystals in Hybrid Hierarchical Polymer Nanowire",
       "journal": "The Journal of Physical Chemistry C",
       "date": "July 2019",
@@ -671,7 +719,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 14,
+      id: 20,
       title: "Effect of non-mesogenic chiral terphenylate on the formulation of room temperature ferroelectric liquid crystal mixtures suitable for display applications",
       "journal": "Journal of Molecular Liquids",
       "date": "July 2019",
@@ -679,7 +727,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 15,
+      id: 21,
       title: "Phase behaviour and structural properties of two members of biphenylyl benzoate chiral mesogenic series",
       "journal": "Liquid Crystals",
       "date": "May 2019",
@@ -687,7 +735,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 16,
+      id: 22,
       title: "The high-energy material science and high-resolution diffraction beamlines at PETRA III",
       "journal": "Acta Crystallographica Section A: Foundations and Advances",
       "date": "August 2016",
@@ -695,7 +743,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 17,
+      id: 23,
       title: "Evidence of the charge-density wave state in polypyrrole nanotubes",
       "journal": "Physical review. B, Condensed matter",
       "date": "March 2015",
@@ -703,7 +751,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 18,
+      id: 24,
       title: "Direct experimental evidence of multiferroicity in a nanocrystalline Zener polaron ordered manganite",
       "journal": "Physical Review B",
       "date": "December 2014",
@@ -711,7 +759,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 19,
+      id: 25,
       title: "Bi-stable resistive switching in an array of Cu/CuxO/Au nanowires",
       "journal": "Applied Physics A",
       "date": "September 2014",
@@ -719,7 +767,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 20,
+      id: 26,
       title: "Tuning of colossal dielectric constant in gold-polypyrrole composite nanotubes using in-situ x-ray diffraction techniques",
       "journal": "AIP Advances",
       "date": "September 2014",
@@ -727,7 +775,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 21,
+      id: 27,
       title: "Asymmetric water diffusion driven nanotube actuator",
       "journal": "RSC Advances",
       "date": "April 2014",
@@ -735,7 +783,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 22,
+      id: 28,
       title: "Core level photoemission studies on conducting polypyrrole polymer nanotubes showing switching transitions",
       "journal": "Journal of Applied Physics",
       "date": "October 2013",
@@ -743,7 +791,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 23,
+      id: 29,
       title: "Hybrid nanotubes: Single step formation of homogeneous nanotubes of polypyrrole-gold composites and novel switching transition of resistance beyond liquid nitrogen temperature",
       "journal": "Journal of Applied Physics",
       "date": "August 2012",
@@ -751,7 +799,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 24,
+      id: 30,
       title: "Polarized neutron reflectivity study of spin vortices formed in Gd-based Langmuir-Blodgett films",
       "journal": "Physical review. B, Condensed matter",
       "date": "November 2010",
@@ -759,7 +807,7 @@ const profile = {
       "status": 'found',
     },
     {
-      id: 25,
+      id: 31,
       title: "Surface and interfacial structural characterization of MBE grown Si/Ge multilayers",
       "journal": "Applied Surface Science",
       "date": "October 2009",
@@ -767,7 +815,7 @@ const profile = {
       "status": 'found',
     },
   ],
-  publicationsCount: 25,
+  publicationsCount: 32,
   languages: ["English (Proficient)", "German (Intermediate)"],
   interests: ["Explore Evolving Fields", "AI in Science", "Data-Driven Research", "Instrument Design", "Music(Piano)", "Painting"],
 };
