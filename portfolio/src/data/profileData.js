@@ -150,7 +150,7 @@ const profile = {
       name: "Research LLM (Multiagent + LangGraph)",
       tags: ["AI", "RAG", "Multiagent", "LangGraph", "Cross-encoder Reranker"],
       description:
-        "Interactive command-line fact-checking game powered by Wikipedia and Google Gemini AI. Players identify the fake statement among true ones generated using Gemini models.",
+        "The first AI research assistant that reads actual scientific papers instead of hallucinating facts, ensuring every claim is citation-backed, verifiable, and audit-ready for regulated industries.",
       techStack: [
         "Python",
         "OpenAI + Test-embeddings",
