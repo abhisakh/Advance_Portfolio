@@ -179,7 +179,8 @@
 
   .navbar .logo {
     margin-bottom: 0; /* Reset logo margin for mobile */
-    margin-top: 0;
+    /* margin-top: 0; */
+    margin-top: -0.2rem;
   }
 
   .menu-toggle {
