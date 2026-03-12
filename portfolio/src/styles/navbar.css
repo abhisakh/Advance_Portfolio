@@ -181,7 +181,7 @@
     margin-bottom: 0; /* Reset logo margin for mobile */
     /* margin-top: 0; */
     margin-top: -0.2rem;
-    line-height: 1;
+    line-height: 2;
   }
 
   .menu-toggle {
