@@ -48,8 +48,8 @@
   .profile-image-top-left {
     top: calc(var(--navbar-height) - 10.5rem);
     left: 50%;
-    transform: translateX(-60%);
-    transform: translateY(50%);
+    transform: translate(-60%,50%);
+    /* transform: translateY(50%); */
     width: 80px;
     height: 80px;
     z-index: 999;
