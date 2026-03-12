@@ -172,7 +172,8 @@
     height: auto;
     /* Logo and Menu Toggle on one row */
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
+    align-items:flex-start;
     flex-wrap: wrap; /* Allows menu-content-row to wrap underneath */
   }
 
