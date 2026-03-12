@@ -167,7 +167,8 @@
 /* --- Responsive Navbar Styles (Mobile) --- */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
+    padding: 0.2rem 1rem 0.6rem; /* smaller top padding */
     height: auto;
     /* Logo and Menu Toggle on one row */
     flex-direction: row;
