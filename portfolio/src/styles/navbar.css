@@ -163,28 +163,27 @@
     margin-bottom: 3rem;
 }
 
-
-/* --- Responsive Navbar Styles (Mobile) --- */
+/* ------------------ MOBILE RESPONSIVE DESIGN ----------- */
 @media (max-width: 768px) {
+  /* MOBILE NAVBAR BASE */
   .navbar {
-    /* padding: 0.5rem 1rem; */
-    padding: 0.2rem 1rem 0.6rem; /* smaller top padding */
-    min-height: 10rem;
-    /* height: auto; */
-    /* Logo and Menu Toggle on one row */
+    padding: 0.2rem 1rem 0.6rem;
+    min-height: 20rem;           /* taller navbar for mobile */
     flex-direction: row;
-    /* align-items: center; */
-    align-items:flex-start;
-    flex-wrap: wrap; /* Allows menu-content-row to wrap underneath */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: var(--card-bg); /* opaque background */
+    box-shadow: 0 2px 10px var(--card-shadow);
   }
 
+  /* LOGO */
   .navbar .logo {
-    margin-bottom: 0; /* Reset logo margin for mobile */
-    /* margin-top: 0; */
     margin-top: -0.2rem;
+    margin-bottom: 0;
     line-height: 2;
   }
 
+  /* MENU TOGGLE (HAMBURGER ICON) */
   .menu-toggle {
     display: block;
     background: none;
@@ -194,99 +193,83 @@
     padding: 0.5rem;
     transition: transform var(--transition-speed);
   }
+
+  /* COLLAPSIBLE MENU CONTENT */
   .navbar .menu-content-row {
+    display: none;               /* hidden by default */
+    width: 100%;                 /* full width */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0 1rem 1rem;  /* inner spacing */
+    gap: 1.5rem;
+    background-color: var(--card-bg); /* opaque background */
+    position: relative;
+    z-index: 1100;               /* above profile image */
     transition: all 0.3s ease;
   }
 
-  /* 🔴 MOBILE CONTENT ROW (Collapsible) */
-  .navbar .menu-content-row {
-    /* 1. Hide by default */
-    display: none;
-
-    /* 2. Takes full width on the line below the logo/toggle */
-    width: 100%;
-
-    /* 3. Stacks vertically when visible */
-    flex-direction: column;
-    align-self: auto; /* Reset desktop alignment */
-    /* 🛠️ ALIGN TO LEFT/START */
-    align-items: flex-start;
-    margin-bottom: 0;
-    gap: 1.5rem; /* Gap between links and feature */
-    padding: 1rem 0;
-    padding-left: 1rem; /* Add padding on the left for the whole container */
-    background-color: var(--card-bg);
-    /* z-index: 1000;    higher than profile image */
-    position: relative;    /* relative is enough for z-index */
-    z-index: 1100;         /* higher than profile image */
-  }
-
-  /* State when menu is open */
+  /* Menu open state */
   .navbar .menu-content-row.open {
     display: flex;
   }
 
-
-  /* 🔴 MOBILE LINKS CONTAINER (ul.nav-links) */
+  /* NAV LINKS (container for items) */
   .navbar .nav-links {
-    width: 50%; /* Take full width of parent row */
+    width: 100%;                 /* full width of menu */
     flex-direction: column;
-    /* 🛠️ ALIGN TO LEFT/START */
     align-items: flex-start;
     gap: 0.5rem;
   }
 
-  /* Mobile link item padding */
+  /* EACH MENU ITEM */
   .navbar .nav-links li {
-      width: 100%;
-      padding: 0;
+    width: 100%;
+    padding: 0;
   }
 
-  /* 🟢 MOBILE NAV LINK WITH UNDERLINE RE-ENABLED */
   .navbar .nav-link {
-    width: 90%; /* Links take up most of the mobile width */
-    /* 🛠️ ALIGN CONTENT TO LEFT/START */
-    justify-content: flex-start;
-    white-space: normal; /* Allow wrapping again on mobile if needed */
-
-    /* RE-ENABLE RELATIVE POSITION AND ADJUST PADDING FOR UNDERLINE SPACE */
-    padding: 0.4rem 0.6rem 0.6rem;
-    position: relative; /* Re-enable for ::after positioning */
-    background-color: rgba(0, 255, 247, 0.05); /* Restore background on hover/active for mobile */
+    width: 100%;                 /* full-width item */
+    white-space: nowrap;         /* single-line text */
+    padding: 1rem;               /* larger touch area */
+    box-sizing: border-box;
+    text-align: left;
+    background-color: var(--card-bg); /* opaque box */
+    border-radius: 0.5rem;
+    position: relative;          /* for underline pseudo-element */
+    transition: all 0.3s ease;
   }
 
-  /* 🔴 Mobile: Configure pseudo-element underline for left alignment */
+  /* UNDERLINE EFFECT */
   .navbar .nav-link::after {
-    display: block; /* Override desktop removal */
-    width: 0; /* Still starts hidden on hover */
-    left: 0.6rem; /* Aligned with content start */
-    transform: none; /* Disable horizontal centering */
-  }
-
-  /* Mobile hover effect on underline */
-  .navbar .nav-link:hover::after {
-      width: calc(100% - 1.2rem); /* Span full link width minus side padding (0.6rem * 2) */
-  }
-
-  /* Ensure active link underline is permanently visible on mobile */
-  .navbar .active-link::after {
-    display: block; /* Override desktop removal */
-    width: calc(100% - 1.2rem); /* Permanently visible */
-    left: 0.6rem;
+    display: block;
+    width: 0;
+    left: 1rem;                  /* align inside padding */
     transform: none;
+    height: 2px;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-color), 0 0 15px rgba(0, 255, 247, 0.5);
+    transition: width var(--transition-speed) ease-out;
   }
 
-  /* Mobile hover is a simple color and background change */
+  .navbar .nav-link:hover::after {
+    width: calc(100% - 2rem);
+  }
+
+  .navbar .active-link::after {
+    width: calc(100% - 2rem);
+    display: block;
+  }
+
   .navbar .nav-link:hover {
-      color: var(--accent-hover);
-      background-color: rgba(0, 255, 247, 0.1);
+    color: var(--accent-hover);
+    background-color: rgba(0, 255, 247, 0.1);
   }
 
-  /* Mobile Feature inside the collapsing UL */
+  /* MOBILE FEATURE CARD */
   .mobile-feature {
-      width: 90%; /* Take up most of the mobile width */
-      max-width: 300px;
-      margin-left: 0;
-      align-self: center /* Aligned to LEFT/START */
+    width: 90%;
+    max-width: 300px;
+    margin-left: 0;
+    align-self: center;
   }
 }
