@@ -169,7 +169,7 @@
   .navbar {
     /* padding: 0.5rem 1rem; */
     padding: 0.2rem 1rem 0.6rem; /* smaller top padding */
-    min-height: 20rem;
+    min-height: 10rem;
     /* height: auto; */
     /* Logo and Menu Toggle on one row */
     flex-direction: row;
