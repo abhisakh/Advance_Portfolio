@@ -168,7 +168,7 @@
   /* MOBILE NAVBAR BASE */
   .navbar {
     padding: 0.2rem 1rem 0.6rem;
-    min-height: 20rem;           /* taller navbar for mobile */
+    min-height: 10rem;           /* taller navbar for mobile */
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
