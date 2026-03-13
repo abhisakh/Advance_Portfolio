@@ -194,7 +194,9 @@
     padding: 0.5rem;
     transition: transform var(--transition-speed);
   }
-
+  .navbar .menu-content-row {
+    transition: all 0.3s ease;
+  }
 
   /* 🔴 MOBILE CONTENT ROW (Collapsible) */
   .navbar .menu-content-row {
@@ -213,6 +215,7 @@
     gap: 1.5rem; /* Gap between links and feature */
     padding: 1rem 0;
     padding-left: 1rem; /* Add padding on the left for the whole container */
+    background-color: var(--card-bg);
   }
 
   /* State when menu is open */
