@@ -761,6 +761,6 @@ new @media (max-width: 768px) block.*/
 
 @media (max-width: 768px) {
   .content-wrapper {
-    margin-top: calc(var(--navbar-height) + 5px);
+    margin-top: calc(var(--navbar-height) + 1px);
   }
 }
