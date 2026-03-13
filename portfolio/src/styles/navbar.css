@@ -226,7 +226,7 @@
 
   /* 🔴 MOBILE LINKS CONTAINER (ul.nav-links) */
   .navbar .nav-links {
-    width: 30%; /* Take full width of parent row */
+    width: 50%; /* Take full width of parent row */
     flex-direction: column;
     /* 🛠️ ALIGN TO LEFT/START */
     align-items: flex-start;
