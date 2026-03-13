@@ -753,4 +753,14 @@ new @media (max-width: 768px) block.*/
   /* These were also listed within the main timeline block,
   but keeping this global section marked for completeness */
 }
+
+
+/* ADDED 40PX MOVE DOWN OF THE PAGE CONTENT WRPPER  */
+
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-top: calc(var(--navbar-height) + 40px);
+  }
 }
