@@ -61,3 +61,15 @@
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 }
+
+/* NEW CHANGES..........*/
+@media (max-width: 768px) {
+  .profile-image-top-left {
+    transform: translate(-50%, 50%) scale(1); /* no scaling */
+    z-index: 999;  /* stays below the menu */
+  }
+
+  .profile-image-top-left:hover {
+    transform: translate(-50%, 50%) scale(1); /* disable hover effect */
+  }
+}

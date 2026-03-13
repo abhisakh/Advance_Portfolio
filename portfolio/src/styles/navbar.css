@@ -204,7 +204,7 @@
     gap: 1.5rem;
     background-color: var(--card-bg); /* opaque background */
     position: relative;
-    z-index: 1100;               /* above profile image */
+    z-index: 2000;               /* above profile image */
     transition: all 1s ease;
   }
 
