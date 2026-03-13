@@ -205,7 +205,7 @@
     background-color: var(--card-bg); /* opaque background */
     position: relative;
     z-index: 1100;               /* above profile image */
-    transition: all 0.3s ease;
+    transition: all 1s ease;
   }
 
   /* Menu open state */
