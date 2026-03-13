@@ -216,7 +216,9 @@
     padding: 1rem 0;
     padding-left: 1rem; /* Add padding on the left for the whole container */
     background-color: var(--card-bg);
-    z-index: 1000;    /* higher than profile image */
+    /* z-index: 1000;    higher than profile image */
+    position: relative;    /* relative is enough for z-index */
+    z-index: 1100;         /* higher than profile image */
   }
 
   /* State when menu is open */
