@@ -6,17 +6,17 @@ import PageLayout from '../components/PageLayout'; // 👈 IMPORT PageLayout
 
 const Home = () => {
   return (
-    <PageLayout pageTitle="Home"> {/* 👈 USE PageLayout for consistent spacing */}
+  <PageLayout pageTitle="Home"> {/* 👈 USE PageLayout for consistent spacing */}
       <main>
         <Hero
           name="Dr. Abhisakh Sarma"
-          description="I'm an experimental physicist (PhD), transitioning into software engineering,
-          specializing in AI and data-driven development. I combine deep expertise in large-scale
-          data processing, complex system modeling, and quantitative analysis with practical skills
-          in modern development stacks. Proficient in Python, React, Node.js, and CI/CD pipelines
-          from a Full-Stack program, I am actively seeking a Junior Software Engineer position
-          (Fullstack, Backend, or AI) to apply my analytical strength to build robust, scalable,
-          and impactful data systems."
+          description="I am an AI Engineer and QA Specialist specializing in Agentic Workflows
+          and high-fidelity RAG architectures. With a PhD in Experimental Physics and 10 years
+          of experience in large-scale scientific automation at DESY and European XFEL, I
+          bridge the gap between complex research and production-ready software engineering.
+          Having recently completed the AI Engineering track at Masterschool Berlin, I focus
+          on building reliable, observable AI systems using LangGraph and FastAPI, currently
+          enhancing system integrity through a dedicated QA Engineering specialization."
           image={profilePic}   // <-- Your existing Hero props are preserved
         />
         {/*<CardSection /> */}{/* Assuming you'll have other sections */}
