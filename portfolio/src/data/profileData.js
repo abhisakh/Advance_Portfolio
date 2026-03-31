@@ -53,12 +53,20 @@ headline: "Physicist & AI Engineer in Training | Bridging Scientific Rigor with 
 
   education: [
     {
-      degree: "AI Engineering & Data Science (Weiterbildung)",
-      school: "Masterschool Institute of Technology, Berlin — in partnership with Software Engineering/Data Science Program (Hamburg, funded by Arbeitsagentur)",
-      start: "2025-06-03",
+      degree: "QA Engineering Program",
+      school: "Masterschool Institute of Technology",
+      start: "Mar 2026",
       end: "Present",
       description:
-        "Advanced AI Engineering and Data Science training covering Python, Machine Learning, Deep Learning, MLOps, and Full-Stack project workflows.",
+        "Core Focus: Manual & Automated testing, STLC, and Bug Lifecycle Management within Agile environments. Specialization: Adapting traditional QA frameworks for LLM evaluation, including hallucination detection and regression testing for prompt-based logic.",
+    },
+    {
+      degree: "AI Engineering Program (Training Program)",
+      school: "Masterschool Institute of Technology",
+      start: "Jun 2025",
+      end: "Feb 2026",
+      description:
+        "Core Focus: Multi-agent orchestration, LLMOps, Vector Databases, and Scalable Backend Architecture. Capstone Project: Developed a production-ready Research Agent using LangGraph, PostgreSQL, and FastAPI, containerized for AWS deployment.",
     },
     {
       degree: "Ph.D. in Physics (Materials Science)",
