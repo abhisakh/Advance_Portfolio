@@ -16,7 +16,7 @@ const About = () => {
         {/*<CardSection title={`About ${profile.name}`}>*/}
           <CardSection title={`About me`}>
           <p className="headline">{profile.headline}</p>
-          <p>{profile.summary}</p>
+          <p style={{ textAlign: "justify", hyphens: "auto" }}>{profile.summary}</p>
 
           <p>
             <strong>Location:</strong> {profile.location} <br />
