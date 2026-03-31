@@ -38,11 +38,15 @@ const About = () => {
         </CardSection>
 
         {/* Education Timeline */}
-        <CareerTimeline title="Education" style={{ marginTop: "20px" }} data={profile.education} />
-
+        <div style={{ textAlign: "justify", textJustify: "inter-word" }}>
+        <CareerTimeline title="Education" data={profile.education} />
+        </div>
+        <div style={{ textAlign: "justify", textJustify: "inter-word" }}>
         {/* Experience Timeline */}
         <CareerTimeline title="Professional Experience" data={profile.experience} />
+        </div>
 
+         <div style={{ textAlign: "justify", textJustify: "inter-word" }}>
         {/* Skills */}
           <CardSection title="Skills & Tools">
             <ul>
@@ -60,7 +64,7 @@ const About = () => {
               </li>
             </ul>
           </CardSection>
-
+         </div>
         {/* Additional Info */}
         <CardSection title="Additional Info">
           <p>
