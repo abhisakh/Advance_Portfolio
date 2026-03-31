@@ -9,9 +9,10 @@ const profile = {
     linkedin: "https://www.linkedin.com/in/dr-abhisakh-sarma",
     orcid: "https://orcid.org/0000-0002-0785-8902",
   },
-  headline: "AI Engineer & QA Specialist | LLM Orchestration & Reliable Systems",
-  summary:
-    "AI Engineer and QA Specialist specializing in high-reliability Agentic Workflows and RAG architectures. I bridge 14 years of scientific data rigor—honed at global facilities like DESY and European XFEL—with modern LLM orchestration to build verifiable, production-ready AI systems. My focus is on implementing rigorous evaluation metrics and automated verification pipelines to ensure data integrity and eliminate hallucinations in autonomous agents.",
+  headline:
+    "",
+    summary:
+    "As an experimental physicist, I spent a decade managing complex scientific instrumentation (Electron Microscopy, Spectroscopy, X-ray Microscopy) and guiding international research teams, giving me unique proficiency in Design of Experiment (DoE) and data methodology. I am now advancing into AI Engineering and Data Science through a professional Weiterbildung (Masterschool, Berlin & Hamburg). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation, bridging the gap between deep analytical rigor and modern software implementation.",
   experience: [
     {
       role: "Instrument Scientist",
@@ -20,9 +21,9 @@ const profile = {
       start: "2021",
       end: "2025-05-31",
       bullets: [
-        "Engineered automated Python quality gates that optimized data storage by 30% while ensuring 100% signal retention.",
-        "Validated high-speed data transformation scripts using Pytest, ensuring precision across distributed clusters.",
-        "Built automated acquisition pipelines with assertion-based checks for multi-terabyte daily datasets.",
+        "Led optical & X-ray pump–probe experimental projects.",
+        "Designed and optimized spectroscopy setups and experimental workflows.",
+        "Collaborated across international teams; developed data processing pipelines.",
       ],
     },
     {
@@ -32,9 +33,9 @@ const profile = {
       start: "2015",
       end: "2021",
       bullets: [
-        "Developed Python control suites that reduced setup time by 25% and eliminated manual errors in high-precision scans.",
-        "Built automated logging systems for experimental execution metadata, providing a 100% traceable audit trail.",
-        "Enhanced processing efficiency by 40% for large-scale datasets through automated benchmarking and pipeline optimization.",
+        "Built and commissioned electrochemical, spectroscopic, and nanomaterials labs.",
+        "Developed instrument-control and data-analysis scripts (Python, LabVIEW).",
+        "Authored multiple publications on X-ray microscopy and catalysts.",
       ],
     },
     {
@@ -44,27 +45,19 @@ const profile = {
       start: "2006",
       end: "2014",
       bullets: [
-        "Specialized in polymer nanostructure charge storage and quantum structure development.",
-        "Designed and implemented infrastructure for Molecular Beam Epitaxy (MBE) systems.",
+        "Worked on polymer nanostructure charge storage and Si/Ge quantum structures.",
+        "Set up Molecular Beam Epitaxy (MBE) infrastructure and supervised students.",
       ],
     },
   ],
   education: [
     {
-      degree: "QA Engineering Program",
-      school: "Masterschool Institute of Technology",
-      start: "2026-03",
+      degree: "AI Engineering & Data Science (Weiterbildung)",
+      school: "Masterschool Institute of Technology, Berlin — in partnership with Software Engineering/Data Science Program (Hamburg, funded by Arbeitsagentur)",
+      start: "2025-06-03",
       end: "Present",
       description:
-        "Specializing in Manual & Automated testing, STLC, and LLM evaluation metrics to ensure the reliability of non-deterministic systems.",
-    },
-    {
-      degree: "AI Engineering & Data Science",
-      school: "Masterschool Institute of Technology",
-      start: "2025-06",
-      end: "2026-02",
-      description:
-        "Advanced training in LangGraph orchestration, RAG pipelines, FastAPI, and multi-agent system design.",
+        "Advanced AI Engineering and Data Science training covering Python, Machine Learning, Deep Learning, MLOps, and Full-Stack project workflows.",
     },
     {
       degree: "Ph.D. in Physics (Materials Science)",
@@ -72,31 +65,31 @@ const profile = {
       start: "2007",
       end: "2014",
     },
+    {
+      degree: "M.Sc. in Physics (Condensed Matter, Electronics)",
+      school: "University of Kalyani, India",
+      start: "2003",
+      end: "2006",
+    },
+    {
+      degree: "B.Sc. in Physics",
+      school: "University of Kalyani, India",
+      start: "2000",
+      end: "2003",
+    },
   ],
   skills: {
-    ai_engineering: [
-      "LangGraph (Expert)",
-      "RAG Architectures",
-      "Pydantic Structured Outputs",
-      "Cross-Encoder Re-ranking",
-      "LLMOps",
-      "Vector DBs (FAISS)",
+    experimental: [
+      "Electron Microscopy",
+      "X-ray Microscopy",
+      "Spectroscopy",
+      "Nanomaterials",
+      "Optical Systems",
+      "Thin Film Growth",
     ],
-    backend_automation: [
-      "Python 3.12",
-      "FastAPI",
-      "PostgreSQL",
-      "SQL (BigQuery)",
-      "n8n",
-      "Docker",
-    ],
-    quality_assurance: [
-      "LLM Evaluation Metrics",
-      "Automated Testing (Pytest)",
-      "Traceability Audits",
-      "Root Cause Analysis",
-    ],
-    ai_assisted_dev: ["Cursor", "GitHub Copilot", "Git/GitHub"],
+    programming: ["Python", "MATLAB", "LabVIEW", "SQL"],
+    ai: ["Machine Learning", "Data Pipelines", "Visualization"],
+    tools: ["Ansys", "ZEMAX", "Docker", "Git"],
   },
   // Data for InstrumentationPage
     instrumentation: [
@@ -154,25 +147,26 @@ const profile = {
     ],
   projectsdata: [
       {
-      name: "Advanced Multi-Agent Research Framework",
-      tags: ["AI", "LangGraph", "FastAPI", "QA"],
+      name: "Research LLM (Multiagent + LangGraph)",
+      tags: ["AI", "RAG", "Multiagent", "LangGraph", "Cross-encoder Reranker"],
       description:
-        "A high-fidelity research engine utilizing multi-agent orchestration to eliminate hallucinations. Features an automated evaluation agent and a citation-mapping system for 100% claim integrity.",
+        "The first AI research assistant that reads actual scientific papers instead of hallucinating facts, ensuring every claim is citation-backed, verifiable, and audit-ready for regulated industries.",
       techStack: [
         "Python",
-        "LangGraph",
-        "FastAPI",
+        "OpenAI + Test-embeddings",
+        "Vector DB(FAISS)",
+        "Cross Encoder Reranker",
         "Pydantic",
-        "Streamlit",
-        "JavaScript DOM"
+        "FastAPI",
+        "Streamlit"
       ],
-      role: "AI Engineer & System Architect",
+      role: "AI Developer & Data Engineer",
       github: "https://github.com/abhisakh/ResearchLLM_MultiAgent_LangGraph_RagGraph.git",
       timeline: "Feb 2026",
       highlights: [
-        "Engineered an Evaluation Agent to audit quality against execution plans.",
-        "Implemented a verification pipeline with Cross-Encoder re-ranking.",
-        "Designed a Traceability Dashboard for real-time agent reasoning visualization."
+        "Self-Correcting intelligence for writing scientific report.",
+        "Citation-Grounded reporting (no Hallucination).",
+        "EU AI Act Compliant Transparency (audit trail, Debug Console)."
       ]
     },
     {
