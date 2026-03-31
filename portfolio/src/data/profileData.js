@@ -169,27 +169,27 @@ headline: "Physicist & AI Engineer in Training | Bridging Scientific Rigor with 
         },
     ],
   projectsdata: [
-      {
-      name: "Research LLM (Multiagent + LangGraph)",
-      tags: ["AI", "RAG", "Multiagent", "LangGraph", "Cross-encoder Reranker"],
+    {
+      name: "Advanced Multi-Agent Research Framework",
+      tags: ["AI", "LangGraph", "Docker", "CI/CD", "QA Automation"],
       description:
-        "The first AI research assistant that reads actual scientific papers instead of hallucinating facts, ensuring every claim is citation-backed, verifiable, and audit-ready for regulated industries.",
+        "An enterprise-grade research engine utilizing multi-agent orchestration to eliminate hallucinations. Built with a 'Quality-First' architecture, including containerized microservices and automated evaluation pipelines.",
       techStack: [
         "Python",
-        "OpenAI + Test-embeddings",
-        "Vector DB(FAISS)",
-        "Cross Encoder Reranker",
-        "Pydantic",
-        "FastAPI",
-        "Streamlit"
+        "LangGraph (Agentic Orchestration)",
+        "Vector DB (FAISS)",
+        "Docker & Docker Compose", // Added
+        "GitHub Actions (CI/CD)",    // Added
+        "Pytest & Multi-Agent QA",
+        "FastAPI"
       ],
-      role: "AI Developer & Data Engineer",
+      role: "AI Engineer & System Architect",
       github: "https://github.com/abhisakh/ResearchLLM_MultiAgent_LangGraph_RagGraph.git",
       timeline: "Feb 2026",
       highlights: [
-        "Self-Correcting intelligence for writing scientific report.",
-        "Citation-Grounded reporting (no Hallucination).",
-        "EU AI Act Compliant Transparency (audit trail, Debug Console)."
+        "Containerized the entire multi-agent stack using Docker to ensure environment parity between dev and production.",
+        "Implemented a CI/CD pipeline that automatically runs evaluation benchmarks on agent responses before deployment.",
+        "Designed a Traceability Dashboard (Debug Console) for real-time visualization of agent reasoning and tool usage."
       ]
     },
     {
