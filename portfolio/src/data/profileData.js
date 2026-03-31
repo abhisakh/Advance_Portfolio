@@ -170,6 +170,28 @@ headline: "Physicist & AI Engineer in Training | Bridging Scientific Rigor with 
     ],
   projectsdata: [
     {
+      name: "Mini-Print Testing Automation",
+      tags: ["QA Automation", "Python", "Pytest", "Logic Validation", "CI/CD"],
+      description:
+        "A comprehensive QA framework designed with a 'Stability-First' architecture. It bridges digital workflows with final outputs through a layered validation strategy, ensuring high-reliability software delivery and process automation.",
+      techStack: [
+        "Python 3.12",
+        "Pytest (Testing Framework)",
+        "GitHub Actions (CI/CD)",
+        "HTML Test Reporting",
+        "JSON/Data Mocking",
+        "Software Simulation Logic"
+      ],
+      role: "QA Automation Engineer",
+      github: "https://github.com/abhisakh/Mini-Print-Testing-Automation-Project.git",
+      timeline: "Mar 2026",
+      highlights: [
+        "Automated Validation Strategy: Designed a layered validation strategy using software simulators to ensure parity between digital workflows and final outputs.",
+        "Regression & Negative Testing: Built a Pytest framework covering core scenarios and edge-case failures, ensuring software reliability and minimizing unexpected behavior.",
+        "CI/CD Integration: Integrated GitHub Actions with traceable HTML reporting for instant defect identification, aligning with modern rapid release cycles."
+      ]
+    },
+    {
       name: "Advanced Multi-Agent Research Framework",
       tags: ["AI", "LangGraph", "Docker", "CI/CD", "QA Automation"],
       description:
