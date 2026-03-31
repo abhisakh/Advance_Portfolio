@@ -9,10 +9,10 @@ const profile = {
     linkedin: "https://www.linkedin.com/in/dr-abhisakh-sarma",
     orcid: "https://orcid.org/0000-0002-0785-8902",
   },
-  headline:
-    "",
-    summary:
+headline: "Physicist & AI Engineer in Training | Bridging Scientific Rigor with Data Intelligence",
+  summary:
     "As an experimental physicist, I spent a decade managing complex scientific instrumentation (Electron Microscopy, Spectroscopy, X-ray Microscopy) and guiding international research teams, giving me unique proficiency in Design of Experiment (DoE) and data methodology. I am now advancing into AI Engineering and Data Science through a professional Weiterbildung (Masterschool, Berlin & Hamburg). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation, bridging the gap between deep analytical rigor and modern software implementation.",
+
   experience: [
     {
       role: "Instrument Scientist",
@@ -50,6 +50,7 @@ const profile = {
       ],
     },
   ],
+
   education: [
     {
       degree: "AI Engineering & Data Science (Weiterbildung)",
@@ -78,18 +79,40 @@ const profile = {
       end: "2003",
     },
   ],
+
   skills: {
     experimental: [
-      "Electron Microscopy",
-      "X-ray Microscopy",
-      "Spectroscopy",
-      "Nanomaterials",
-      "Optical Systems",
-      "Thin Film Growth",
+      "Scanning X-ray Diffraction Microscopy (SXDM)",
+      "Electron Microscopy (SEM/TEM)",
+      "Molecular Beam Epitaxy (MBE)",
+      "Spectroscopy (XPS, XFS, Raman)",
+      "Thin Film Growth & Nanofabrication",
+      "Optical Pump-Probe Setups"
     ],
-    programming: ["Python", "MATLAB", "LabVIEW", "SQL"],
-    ai: ["Machine Learning", "Data Pipelines", "Visualization"],
-    tools: ["Ansys", "ZEMAX", "Docker", "Git"],
+    programming: [
+      "Python (Pandas, NumPy, Scipy)",
+      "MATLAB",
+      "LabVIEW",
+      "SQL (PostgreSQL)",
+      "FastAPI",
+      "Shell Scripting"
+    ],
+    ai: [
+      "Machine Learning (Regression, Clustering)",
+      "Neural Networks & Deep Learning",
+      "Data Visualization (Matplotlib, Seaborn)",
+      "RAG Pipelines",
+      "Model Evaluation Metrics"
+    ],
+    tools: [
+      "Docker",
+      "Git / GitHub",
+      "Pytest",
+      "Ansys",
+      "ZEMAX",
+      "OriginLab",
+      "ImageJ"
+    ],
   },
   // Data for InstrumentationPage
     instrumentation: [
