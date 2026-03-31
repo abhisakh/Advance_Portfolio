@@ -49,15 +49,18 @@ const About = () => {
             <li>
               <strong>Experimental:</strong> {profile.skills.experimental.join(", ")}
             </li>
+            <li></li>
             <li>
               <strong>Programming:</strong> {profile.skills.programming.join(", ")}
             </li>
+            <li></li>
             <li>
               <strong>AI & Data:</strong> {profile.skills.ai.join(", ")}
             </li>
             <li>
               <strong>Tools:</strong> {profile.skills.tools.join(", ")}
             </li>
+            <li></li>
           </ul>
         </CardSection>
 
