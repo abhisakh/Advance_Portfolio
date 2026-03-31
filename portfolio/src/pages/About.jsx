@@ -57,6 +57,7 @@ const About = () => {
             <li>
               <strong>AI & Data:</strong> {profile.skills.ai.join(", ")}
             </li>
+            <li></li>
             <li>
               <strong>Tools:</strong> {profile.skills.tools.join(", ")}
             </li>
