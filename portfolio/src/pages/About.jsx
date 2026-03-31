@@ -38,7 +38,7 @@ const About = () => {
         </CardSection>
 
         {/* Education Timeline */}
-        <CareerTimeline title="Education" data={profile.education} />
+        <CareerTimeline title="Education" style={{ marginTop: "20px" }} data={profile.education} />
 
         {/* Experience Timeline */}
         <CareerTimeline title="Professional Experience" data={profile.experience} />
