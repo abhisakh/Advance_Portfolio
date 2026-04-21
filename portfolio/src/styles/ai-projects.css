@@ -190,26 +190,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-/* =====================================================
-   EXTRA MODIFICATION SO THAT TEXTS INSIDE THE CARD EXPANDS VERTICALLY
-   ===================================================== */
-.project-desc,
-.project-highlights {
-  flex-grow: 0; /* ❌ stop forcing expansion */
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 0.6rem; /* ✅ restores vertical rhythm */
-}
-
-.project-tech {
-  margin-top: auto; /* 🔥 pushes this section to bottom */
-}
-
-.github-link {
-  margin-top: 0.5rem;
-}
