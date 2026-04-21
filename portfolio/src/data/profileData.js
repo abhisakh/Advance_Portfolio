@@ -177,6 +177,29 @@ headline: "Physicist & AI Engineer in Training | Bridging Scientific Rigor with 
         },
     ],
   projectsdata: [
+        {
+      name: "HRChat_LLM — Context-Aware HR Chatbot with RBAC",
+      tags: ["AI Systems", "LLM", "FastAPI", "RAG", "RBAC", "Conversational AI"],
+      description:
+        "Designed and developed a context-aware, multi-user HR chatbot leveraging hybrid AI (SQL + vector search) to deliver accurate, role-specific responses. Built for enterprise environments with strict access control, persistent memory, and dynamic workflow orchestration.",
+      techStack: [
+        "Python",
+        "FastAPI",
+        "LangGraph",
+        "OpenAI",
+        "Pinecone",
+        "React"
+      ],
+      role: "AI Engineer & System Architect",
+      github: "https://github.com/abhisakh/HRChat.git",
+      timeline: "Apr 2026",
+      highlights: [
+        "Hybrid Retrieval Architecture: Implemented a combined SQL and vector-based semantic search pipeline for precise and contextually relevant query resolution.",
+        "Persistent Memory Layer: Built user-specific conversational memory to maintain context across sessions and improve response personalization.",
+        "RBAC Security Model: Designed and enforced role-based access control to ensure strict data isolation across multiple user types.",
+        "Agentic Workflow Orchestration: Utilized LangGraph to dynamically route queries through LLM-driven decision flows for adaptive and intelligent responses."
+      ]
+    },
     {
       name: "Mini-Print Testing Automation",
       tags: ["QA Automation", "Python", "Pytest", "Logic Validation", "CI/CD"],
