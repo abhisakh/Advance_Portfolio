@@ -47,6 +47,9 @@
   transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* ensures equal height behavior */
 }
 
 .project-card:hover {
@@ -186,4 +189,19 @@
   .project-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* =====================================================
+   EXTRA MODIFICATION SO THAT TEXTS INSIDE THE CARD EXPANDS VERTICALLY
+   ===================================================== */
+.project-desc,
+.project-highlights {
+  flex-grow: 1;
+}
+.project-tech {
+  margin-top: auto; /* 🔥 pushes this section to bottom */
+}
+
+.github-link {
+  margin-top: 0.5rem;
 }
