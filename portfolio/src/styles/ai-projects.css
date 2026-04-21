@@ -196,8 +196,16 @@
    ===================================================== */
 .project-desc,
 .project-highlights {
-  flex-grow: 1;
+  flex-grow: 0; /* ❌ stop forcing expansion */
 }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.6rem; /* ✅ restores vertical rhythm */
+}
+
 .project-tech {
   margin-top: auto; /* 🔥 pushes this section to bottom */
 }
