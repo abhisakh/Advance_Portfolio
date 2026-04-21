@@ -47,9 +47,9 @@
   transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  height: 100%; /* ensures equal height behavior */
+  height: 100%;*/ /* ensures equal height behavior */
 }
 
 .project-card:hover {
