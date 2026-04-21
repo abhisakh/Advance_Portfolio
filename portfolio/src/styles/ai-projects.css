@@ -74,6 +74,8 @@
   font-size: 0.85rem;
   color: #aaa;
   font-style: italic;
+  white-space: nowrap; /* 🔥 prevents line break */
+  flex-shrink: 0;      /* 🔥 prevents it from shrinking */
 }
 
 /* =====================================================
