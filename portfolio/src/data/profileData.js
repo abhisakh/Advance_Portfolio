@@ -189,7 +189,30 @@ experience: [
         },
     ],
   projectsdata: [
-        {
+    {
+        name: "Privacy-Preserving Federated ML & Clinical Causal Engine",
+        tags: ["Federated Learning", "Healthcare AI", "PyTorch", "XGBoost", "Differential Privacy", "MLOps"],
+        description:
+          "Engineered a privacy-preserving distributed ML framework linking multi-clinic edge clients with a central core. Enables local model training on sensitive patient datasets without transferring raw clinical data, using secure aggregation and differential privacy.",
+        techStack: [
+          "Python",
+          "PyTorch",
+          "XGBoost",
+          "Flower",
+          "FastAPI",
+          "Docker"
+        ],
+        role: "AI/ML Engineer & Distributed Systems Lead",
+        github: "Commercial / NDA Protected", // Private / Commercial Project (Protected by NDA)
+        timeline: "Jul 2026",
+        highlights: [
+          "Distributed Multi-Clinic Network: Built a federated architecture where local nodes train XGBoost decision trees and PyTorch networks on isolated clinical data, sharing only gradient metrics and trees with the core server[cite: 3].",
+          "Secure Aggregation & Differential Privacy: Implemented FedAvg and FedBagging aggregation algorithms enhanced with differential privacy noise mechanisms to prevent model inversion attacks and protect patient privacy[cite: 3].",
+          "GDPR & Data Security: Enforced schema-level database isolation and strict PII redaction (Microsoft Presidio) to guarantee full regulatory compliance[cite: 3].",
+          "Production Inference Layer: Deployed containerized FastAPI endpoints on the core server, exposing real-time clinical prediction and risk scoring microservices[cite: 3]."
+        ]
+      },
+      {
       name: "HRChat_LLM — Context-Aware HR Chatbot with RBAC",
       tags: ["AI Systems", "LLM", "FastAPI", "RAG", "RBAC", "Conversational AI"],
       description:
