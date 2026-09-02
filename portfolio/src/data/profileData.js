@@ -9,9 +9,9 @@ const profile = {
     linkedin: "https://www.linkedin.com/in/dr-abhisakh-sarma",
     orcid: "https://orcid.org/0000-0002-0785-8902",
   },
-headline: "Physicist & AI Engineer in Training | Bridging Scientific Rigor with Data Intelligence",
+headline: "Physicist & AI Engineer | Bridging Scientific Rigor with Data Intelligence and Production AI",
   summary:
-    "As an experimental physicist, I spent a decade managing complex scientific instrumentation (Electron Microscopy, Spectroscopy, X-ray Microscopy) and guiding international research teams, giving me unique proficiency in Design of Experiment (DoE) and data methodology. I am now advancing into AI Engineering and Data Science through a professional Weiterbildung (Masterschool, Berlin & Hamburg). My goal is to apply data-driven intelligence and machine learning to scientific and industrial innovation, bridging the gap between deep analytical rigor and modern software implementation.",
+    "As an experimental physicist, I spent a decade managing complex scientific instrumentation (X-ray Microscopy, Spectroscopy) and high-throughput data architectures at EuXFEL and DESY, developing deep expertise in data methodology and system design. Moving beyond research into production AI engineering, I now build privacy-preserving ML pipelines, agentic workflows, and microservices at Loretta Health UG. My goal is to apply data-driven intelligence and machine learning to high-impact software systems, bridging the gap between deep analytical rigor and modern software implementation.",
 
   experience: [
     {
