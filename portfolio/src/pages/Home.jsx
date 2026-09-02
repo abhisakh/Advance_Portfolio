@@ -10,13 +10,13 @@ const Home = () => {
       <main>
         <Hero
           name="Dr. Abhisakh Sarma"
-          description="I am an AI Engineer and QA Specialist specializing in Agentic Workflows
-          and high-fidelity RAG architectures. With a PhD in Experimental Physics and 10 years
-          of experience in large-scale scientific automation at DESY and European XFEL, I
-          bridge the gap between complex research and production-ready software engineering.
-          Having recently completed the AI Engineering track at Masterschool Berlin, I focus
-          on building reliable, observable AI systems using LangGraph and FastAPI, currently
-          enhancing system integrity through a dedicated QA Engineering specialization."
+          description="I am an AI/ML & Software Engineer specializing in Agentic Workflows (LangGraph, MCP),
+          FastAPI Microservices, and Privacy-Preserving AI Architectures.  Holding a PhD in Physics and
+          bringing 10 years of analytical and systems engineering experience from DESY and EuXFEL, I bridge
+          the gap between complex research and production-grade software. Currently engineering clinical ML
+          pipelines and data security frameworks at Loretta Health UG, I focus on building resilient,
+          observable, and high-throughput AI systems—from multi-agent orchestration and Clinical NLP
+          to automated testing and cloud-native deployments."
           image={profilePic}   // <-- Your existing Hero props are preserved
         />
         {/*<CardSection /> */}{/* Assuming you'll have other sections */}
