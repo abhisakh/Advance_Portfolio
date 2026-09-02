@@ -206,10 +206,10 @@ experience: [
         github: "Commercial / NDA Protected", // Private / Commercial Project (Protected by NDA)
         timeline: "Jul 2026",
         highlights: [
-          "Distributed Multi-Clinic Network: Built a federated architecture where local nodes train XGBoost decision trees and PyTorch networks on isolated clinical data, sharing only gradient metrics and trees with the core server[cite: 3].",
-          "Secure Aggregation & Differential Privacy: Implemented FedAvg and FedBagging aggregation algorithms enhanced with differential privacy noise mechanisms to prevent model inversion attacks and protect patient privacy[cite: 3].",
-          "GDPR & Data Security: Enforced schema-level database isolation and strict PII redaction (Microsoft Presidio) to guarantee full regulatory compliance[cite: 3].",
-          "Production Inference Layer: Deployed containerized FastAPI endpoints on the core server, exposing real-time clinical prediction and risk scoring microservices[cite: 3]."
+          "Distributed Multi-Clinic Network: Built a federated architecture where local nodes train XGBoost decision trees and PyTorch networks on isolated clinical data, sharing only gradient metrics and trees with the core server.",
+          "Secure Aggregation & Differential Privacy: Implemented FedAvg and FedBagging aggregation algorithms enhanced with differential privacy noise mechanisms to prevent model inversion attacks and protect patient privacy.",
+          "GDPR & Data Security: Enforced schema-level database isolation and strict PII redaction (Microsoft Presidio) to guarantee full regulatory compliance.",
+          "Production Inference Layer: Deployed containerized FastAPI endpoints on the core server, exposing real-time clinical prediction and risk scoring microservices."
         ]
       },
       {
