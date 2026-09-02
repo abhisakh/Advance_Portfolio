@@ -13,50 +13,62 @@ headline: "Physicist & AI Engineer | Bridging Scientific Rigor with Data Intelli
   summary:
     "As an experimental physicist, I spent a decade managing complex scientific instrumentation (X-ray Microscopy, Spectroscopy) and high-throughput data architectures at EuXFEL and DESY, developing deep expertise in data methodology and system design. Moving beyond research into production AI engineering, I now build privacy-preserving ML pipelines, agentic workflows, and microservices at Loretta Health UG. My goal is to apply data-driven intelligence and machine learning to high-impact software systems, bridging the gap between deep analytical rigor and modern software implementation.",
 
-  experience: [
-    {
-      role: "Instrument Scientist",
-      org: "European X-ray Free Electron Laser (EuXFEL)",
-      location: "Schenefeld, Germany",
-      start: "2021",
-      end: "2025-05-31",
-      bullets: [
-        "Engineered automated Python quality gates that optimized data storage by 30% while ensuring 100% signal retention.",
-        "Validated high-speed data transformation scripts using Pytest, ensuring mathematical precision across distributed clusters.",
-        "Built automated acquisition pipelines with assertion-based checks for multi-terabyte daily datasets.",
-      ],
-    },
-    {
-      role: "Beamline Scientist",
-      org: "Deutsches Elektronen-Synchrotron (DESY)",
-      location: "Hamburg, Germany",
-      start: "2015",
-      end: "2021",
-      bullets: [
-        "Developed Python control suites that reduced setup time by 25% and eliminated human error in high-precision scans.",
-        "Built automated logging systems for experimental execution, providing a 100% traceable audit trail for reproducibility.",
-        "Enhanced processing efficiency by 40% for large-scale datasets through automated benchmarking and pipeline optimization.",
-      ],
-    },
-    {
-      role: "Research Associate / PhD Researcher",
-      org: "Saha Institute of Nuclear Physics (SINP)",
-      location: "Kolkata, India",
-      start: "2006",
-      end: "2014",
-      bullets: [
-        "Worked on polymer nanostructure charge storage and Si/Ge quantum structures.",
-        "Set up Molecular Beam Epitaxy (MBE) infrastructure and supervised students.",
-      ],
-    },
-  ],
+experience: [
+  {
+    role: "AI/ML Engineer (Backend & Distributed Systems)",
+    org: "Loretta Health UG",
+    location: "Hamburg, Germany",
+    start: "2026-06",
+    end: "Present",
+    bullets: [
+      "Built two-stage Microsoft Presidio PII redaction and schema-isolated ingestion endpoints to process sensitive health data in compliance with GDPR standards.",
+      "Engineered containerized FastAPI microservices via rootless Docker on GCP with CI/CD pipelines, delivering real-time inference and SHAP explainability.",
+      "Scaled federated causal risk models across distributed health nodes using PyTorch, XGBoost, and Flower."
+    ],
+  },
+  {
+    role: "Instrument Scientist (Data Systems & Automation)",
+    org: "European X-Ray Free-Electron Laser (EuXFEL)",
+    location: "Schenefeld, Germany",
+    start: "2021-06",
+    end: "2025-05",
+    bullets: [
+      "Architected 24/7 automated Python processing pipelines handling multi-terabyte physics data streams, replacing legacy scripts with high-concurrency microservices.",
+      "Implemented strict Pydantic validation schemas and automated testing harnesses to enforce data contract integrity and eliminate production pipeline failures.",
+      "Collaborated with international engineering teams to optimize data storage efficiency and establish unified technical standards across data streams."
+    ],
+  },
+  {
+    role: "Beamline Scientist (Systems & Automation Engineering)",
+    org: "Deutsches Elektronen-Synchrotron (DESY)",
+    location: "Hamburg, Germany",
+    start: "2015-05",
+    end: "2021-05",
+    bullets: [
+      "Designed custom statistical analysis and automated Python control suites, resolving processing bottlenecks and improving system throughput by 25%.",
+      "Built 100% traceable metadata logging architectures to track data provenance and maintain strict governance across large-scale datasets.",
+      "Enhanced processing efficiency by 40% for multi-terabyte experiments through automated benchmarking and pipeline optimization."
+    ],
+  },
+  {
+    role: "PhD Researcher & Data Scientist",
+    org: "Saha Institute of Nuclear Physics (SINP)",
+    location: "Kolkata, India",
+    start: "2007-09",
+    end: "2015-04",
+    bullets: [
+      "Engineered complex data acquisition and modeling algorithms for large-scale physical systems.",
+      "Designed experiments, set up advanced instrumentation infrastructure, and mentored junior researchers in experimental methodology."
+    ],
+  },
+],
 
   education: [
     {
       degree: "QA Engineering Program",
       school: "Masterschool Institute of Technology",
       start: "Mar 2026",
-      end: "Present",
+      end: "Jun 2026",
       description:
         "Core Focus: Manual & Automated testing, STLC, and Bug Lifecycle Management within Agile environments. Specialization: Adapting traditional QA frameworks for LLM evaluation, including hallucination detection and regression testing for prompt-based logic.",
     },
