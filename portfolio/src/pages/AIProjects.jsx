@@ -80,17 +80,20 @@ const AIProjects = () => {
                     <strong>Tech Stack:</strong>{" "}
                     {proj.techStack?.join(", ")}
                   </div>
-
-                  {/* 🔗 GitHub Link */}
+                  {/* 🔗 GitHub Link / Project Status */}
                   {proj.github && (
-                    <a
-                      href={proj.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="github-link"
-                    >
-                      View on GitHub →
-                    </a>
+                    /^(https?:\/\/|www\.)/i.test(proj.github) ? (
+                      <a
+                        href={proj.github.startsWith("www.") ? `https://${proj.github}` : proj.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-link"
+                      >
+                        View on GitHub →
+                      </a>
+                    ) : (
+                      <span className="confidential-text">{proj.github}</span>
+                    )
                   )}
                 </div>
               ))
