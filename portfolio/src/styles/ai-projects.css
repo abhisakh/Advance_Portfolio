@@ -95,6 +95,9 @@
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
   line-height: 1.5;
+  /* For the paragraph style*/
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* =====================================================
@@ -132,6 +135,9 @@
   font-size: 0.9rem;
   line-height: 1.45;
   list-style-type: disc;
+  /* For the paragraph style*/
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* =====================================================
