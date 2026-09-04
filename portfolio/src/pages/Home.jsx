@@ -15,7 +15,7 @@ const Home = () => {
           bringing 10 years of analytical and systems engineering experience from DESY and EuXFEL, I bridge
           the gap between complex research and production-grade software. Currently engineering clinical ML
           pipelines and data security frameworks at Loretta Health UG, I focus on building resilient,
-          observable, and high-throughput AI systems—from multi-agent orchestration and Clinical NLP
+          observable, and high-throughput AI systems, from multi-agent orchestration and Clinical NLP
           to automated testing and cloud-native deployments."
           image={profilePic}   // <-- Your existing Hero props are preserved
         />
