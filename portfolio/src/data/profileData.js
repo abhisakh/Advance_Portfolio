@@ -682,7 +682,7 @@ experience: [
       title: "Time Resolved Study of Laser Induced Ultrafast Alloying Processes in Au/Pd Core Shell Nanorods",
       journal: "arXiv",
       date: "March 2026",
-      doi: "https://arxiv.org/abs/2603.01597",
+      doi: "10.48550/arXiv.2603.01597",
       status: 'found',
     },
     {
